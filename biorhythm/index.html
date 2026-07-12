@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<!--
+  🚀 AstroBioRhythm - Luxury Biorhythm landing & analysis page
+  Elite design language inspired by Apple, Rolex, and Leica.
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO Meta Tags -->
+    <title>AstroBioRhythm - Detailed Biorhythm Analysis | Luxury Cosmic Cycles</title>
+    <meta name="description" content="Calculate and analyze your physical, emotional, and intellectual biological cycles. Unveil your daily peaks, troughs, and critical days with our premium, scientific biorhythm calculator." />
+    <meta name="keywords" content="biorhythm, biorhythm calculator, biological cycles, physical cycle, emotional cycle, intellectual cycle, critical days, astro biorhythm, luxury calculator" />
+    <meta name="author" content="AstroBioRhythm" />
+    <meta name="robots" content="index, follow" />
+    
+    <link rel="icon" type="image/png" href="../astrology-emblem.png" />
+    <link rel="canonical" href="https://astrobiorhythm.com/biorhythm" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Stack -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/style-enhanced.css" />
+
+    <!-- Tailwind Config for Custom Styling -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              cinzel: ['Cinzel', 'serif'],
+              playfair: ['Playfair Display', 'serif'],
+              lora: ['Lora', 'serif'],
+              inter: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              gold: {
+                DEFAULT: '#bf953f',
+                light: '#fcf6ba',
+                medium: '#b38728',
+                dark: '#aa771c',
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Custom CSS Overrides and Luxury Effects -->
+    <style>
+      :root {
+        --color-bg: #0c0f16;
+        --color-bg-sidebar: #131720;
+        --color-bg-card: rgba(28, 33, 44, 0.6);
+        --color-bg-accent: #272d3b;
+        --color-text-main: #f0f3f8;
+        --color-text-muted: #8fa0b5;
+        --color-border: rgba(191, 149, 63, 0.35);
+        --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+      }
+
+      /* Base Layout Settings */
+      body {
+        font-family: var(--font-body), serif;
+        background-color: var(--color-bg);
+        color: var(--color-text-main);
+        overflow-x: hidden;
+        overflow-y: auto;
+        min-height: 100vh;
+      }
+
+      /* Luxury Glassmorphism card overrides */
+      .luxury-card {
+        background: var(--color-bg-card);
+        backdrop-filter: blur(16px) saturate(120%);
+        -webkit-backdrop-filter: blur(16px) saturate(120%);
+        border: 1px solid var(--color-border);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        transition: var(--transition-smooth, all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1));
+      }
+
+      .luxury-card:hover {
+        border-color: rgba(191, 149, 63, 0.6);
+        box-shadow: 0 12px 40px 0 rgba(191, 149, 63, 0.12), 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+      }
+
+      /* Premium Gold Gradient Text */
+      .gold-gradient-text {
+        background: var(--gold-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      /* Form Input styling inspired by Rolex contact pages */
+      .luxury-input {
+        background: rgba(12, 15, 22, 0.4);
+        border: 1px solid rgba(191, 149, 63, 0.2);
+        border-bottom: 2px solid rgba(191, 149, 63, 0.4);
+        color: var(--color-text-main);
+        font-family: 'Inter', sans-serif;
+        transition: all 0.3s ease;
+      }
+
+      .luxury-input:focus {
+        outline: none;
+        border-color: rgba(191, 149, 63, 0.8);
+        border-bottom-color: #fcf6ba;
+        box-shadow: 0 0 15px rgba(191, 149, 63, 0.2);
+        background: rgba(191, 149, 63, 0.05);
+      }
+
+      .luxury-input::placeholder {
+        color: rgba(143, 160, 181, 0.4);
+      }
+
+      /* Circular Gauges styles */
+      .gauge-svg {
+        transform: rotate(-90deg);
+      }
+
+      .gauge-track {
+        stroke: rgba(255, 255, 255, 0.05);
+      }
+
+      .gauge-fill {
+        stroke-dasharray: 283;
+        stroke-dashoffset: 283;
+        transition: stroke-dashoffset 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        stroke-linecap: round;
+      }
+
+      /* Cursor Glow */
+      #cursor-glow {
+        position: fixed;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(191, 149, 63, 0.06) 0%, rgba(191, 149, 63, 0) 70%);
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.5s ease;
+      }
+
+      /* Filigree corner styling */
+      .filigree-corner {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        color: var(--color-border);
+        pointer-events: none;
+        z-index: 5;
+        opacity: 0.7;
+      }
+
+      /* Scroll Animation reveal states */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Audio synthesiser styling matching the main page sound button */
+      .sound-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(191, 149, 63, 0.08);
+        border: 1px solid var(--color-border);
+        padding: 0.35rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-family: 'Inter', sans-serif;
+        color: var(--color-text-main);
+        transition: all 0.3s ease;
+      }
+
+      .sound-btn:hover {
+        background: rgba(191, 149, 63, 0.18);
+        border-color: rgba(191, 149, 63, 0.6);
+        box-shadow: 0 0 10px rgba(191, 149, 63, 0.2);
+      }
+
+      /* Dynamic background canvas */
+      #stars-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      /* HTML content container */
+      .page-content-wrapper {
+        position: relative;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body class="theme-platinum font-lora">
+    <!-- Star Particles Canvas -->
+    <canvas id="stars-canvas"></canvas>
+
+    <!-- Glowing Follow Cursor (Desktop) -->
+    <div id="cursor-glow" class="hidden md:block"></div>
+
+    <div class="page-content-wrapper min-h-screen flex flex-col justify-between">
+      
+      <!-- Premium Glassmorphism Floating Navbar -->
+      <nav class="sticky top-0 w-full z-50 px-6 md:px-12 py-4 border-b border-[rgba(191,149,63,0.2)] bg-[#0c0f16]/60 backdrop-blur-md flex justify-between items-center">
+        <a href="../index.html" onclick="window.location.href='../index.html'; return false;" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center bg-black/40 group-hover:border-gold transition-all duration-500 overflow-hidden relative">
+            <svg viewBox="0 0 100 100" class="w-8 h-8 text-gold animate-[spin_40s_linear_infinite]">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="50" cy="50" r="37" fill="none" stroke="currentColor" stroke-dasharray="2 2" stroke-width="0.5"/>
+              <path d="M 50 15 L 50 85 M 15 50 L 85 50" stroke="currentColor" stroke-width="0.5" stroke-dasharray="1 3"/>
+              <g transform="translate(41, 38) scale(0.6)" stroke="currentColor" fill="none" stroke-width="3">
+                <path d="M 9 2 L 12 7 L 17 7 L 13 11 L 15 16 L 9 13 L 3 16 L 5 11 L 1 7 L 6 7 Z" />
+              </g>
+            </svg>
+          </div>
+          <div>
+            <span class="font-cinzel text-sm md:text-base tracking-[0.2em] text-white group-hover:text-gold transition-colors duration-300">AstroBioRhythm</span>
+            <span class="block text-[0.65rem] tracking-[0.1em] text-gold/60 font-inter uppercase">Detailed Calculator</span>
+          </div>
+        </a>
+
+        <!-- Controls (Sound, Back, Language) -->
+        <div class="flex items-center gap-3 md:gap-5">
+          <!-- Back Link -->
+          <a href="../index.html" onclick="window.location.href='../index.html'; return false;" class="group flex items-center gap-2 text-xs md:text-sm tracking-widest text-gold/80 hover:text-white transition-all duration-300 font-inter">
+            <svg class="w-4 h-4 transform group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+            <span class="hidden sm:inline uppercase" id="nav-back-text">Back to Home</span>
+          </a>
+
+          <!-- Language Selector -->
+          <div class="relative">
+            <select id="languageSelect" class="bg-black/80 border border-gold/30 rounded-lg px-2 py-1 text-xs text-white focus:outline-none focus:border-gold transition-all duration-300 font-inter cursor-pointer" aria-label="Choose Language">
+              <option value="en">English</option>
+              <option value="sk">Slovensky</option>
+              <option value="de">Deutsch</option>
+              <option value="sr">Srpski</option>
+              <option value="hr">Hrvatski</option>
+              <option value="fr">Français</option>
+              <option value="hu">Magyar</option>
+              <option value="it">Italiano</option>
+            </select>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Layout -->
+      <main class="flex-grow px-4 md:px-12 py-10 md:py-16 max-w-7xl mx-auto w-full">
+        
+        <!-- Hero Section -->
+        <section class="text-center mb-16 relative">
+          <div class="absolute inset-0 flex justify-center items-center pointer-events-none opacity-5 select-none -top-10">
+            <svg class="w-[300px] md:w-[450px] text-white" viewBox="0 0 100 100" fill="currentColor">
+              <path d="M50,15 A35,35 0 0,0 15,50 A35,35 0 0,0 50,85 A35,35 0 0,0 85,50 A35,35 0 0,0 50,15 M50,2 L50,98 M2,50 L98,50" stroke="currentColor" stroke-width="0.25" fill="none"/>
+            </svg>
+          </div>
+
+          <span class="text-xs md:text-sm tracking-[0.4em] text-gold font-inter uppercase block mb-3 animate-pulse" id="hero-tagline">Biological Rhythms Decoder</span>
+          <h1 class="text-4xl md:text-6xl font-cinzel tracking-[0.2em] font-semibold text-white mb-6 uppercase leading-tight relative inline-block">
+            <span class="gold-gradient-text" id="hero-title">Cosmic Cycles</span>
+          </h1>
+          <p class="text-sm md:text-lg max-w-2xl mx-auto text-gold/70 font-lora italic leading-relaxed" id="hero-desc">
+            Align your physical vigor, emotional patterns, and intellectual breakthroughs with the mathematical harmony of the universe.
+          </p>
+        </section>
+
+        <!-- Dynamic Form & Calculator Card Grid -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+          
+          <!-- Editorial Column / Exclusivity Text -->
+          <div class="lg:col-span-4 lg:pr-8 flex flex-col justify-center h-full text-left reveal" id="info-editorial-col">
+            <h2 class="font-cinzel text-xl md:text-2xl tracking-[0.15em] text-white mb-4 uppercase" id="edit-title">The Three Pillars of Life</h2>
+            <div class="w-12 h-[1px] bg-gold mb-6"></div>
+            <p class="text-xs md:text-sm text-gold/60 font-lora mb-4 leading-relaxed italic" id="edit-para-1">
+              Biorhythms are natural biological cycles determined by your moment of birth. From the moment you take your first breath, three distinct cycles govern your life force: the Physical, the Emotional, and the Intellectual.
+            </p>
+            <p class="text-xs md:text-sm text-gold/60 font-lora mb-6 leading-relaxed italic" id="edit-para-2">
+              Knowing when your energy cycles hit their peak or sink to a critical state empowers you to orchestrate your major life decisions, key physical performances, and creative pursuits with maximum tactical advantage.
+            </p>
+            <div class="hidden lg:flex items-center gap-3">
+              <span class="text-[0.65rem] tracking-[0.25em] text-gold uppercase font-inter">Premium Astrological Intelligence</span>
+            </div>
+          </div>
+
+          <!-- The Input Card Form -->
+          <div class="lg:col-span-8 w-full luxury-card p-6 md:p-10 rounded-2xl relative overflow-hidden">
+            <!-- Corner Filigrees for Luxury styling -->
+            <svg class="filigree-corner top-3 left-3 transform rotate-0" viewBox="0 0 100 100"><path d="M10,90 L10,10 L90,10 M18,90 L18,18 L90,18" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+            <svg class="filigree-corner top-3 right-3 transform rotate-90" viewBox="0 0 100 100"><path d="M10,90 L10,10 L90,10 M18,90 L18,18 L90,18" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+            <svg class="filigree-corner bottom-3 left-3 transform -rotate-90" viewBox="0 0 100 100"><path d="M10,90 L10,10 L90,10 M18,90 L18,18 L90,18" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+            <svg class="filigree-corner bottom-3 right-3 transform rotate-180" viewBox="0 0 100 100"><path d="M10,90 L10,10 L90,10 M18,90 L18,18 L90,18" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+            
+            <h2 class="font-cinzel text-lg md:text-xl text-white tracking-[0.2em] mb-6 uppercase text-center" id="form-card-title">Birth Information</h2>
+
+            <form id="biorhythmForm" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Full Name Input -->
+                <div class="flex flex-col gap-2">
+                  <label for="userName" class="font-inter text-xs text-gold/80 tracking-widest uppercase font-semibold" id="label-name">Full Name</label>
+                  <input type="text" id="userName" name="userName" class="luxury-input px-4 py-3 rounded-lg text-sm" placeholder="Enter your name" required />
+                </div>
+                
+                <!-- Email Input -->
+                <div class="flex flex-col gap-2">
+                  <label for="userEmail" class="font-inter text-xs text-gold/80 tracking-widest uppercase font-semibold" id="label-email">Email (Optional)</label>
+                  <input type="email" id="userEmail" name="userEmail" class="luxury-input px-4 py-3 rounded-lg text-sm" placeholder="your@email.com" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Date of Birth -->
+                <div class="flex flex-col gap-2">
+                  <label for="birthDate" class="font-inter text-xs text-gold/80 tracking-widest uppercase font-semibold" id="label-birthdate">Date of Birth</label>
+                  <input type="date" id="birthDate" name="birthDate" class="luxury-input px-4 py-3 rounded-lg text-sm" required />
+                </div>
+
+                <!-- Date for Analysis -->
+                <div class="flex flex-col gap-2">
+                  <label for="analysisDate" class="font-inter text-xs text-gold/80 tracking-widest uppercase font-semibold" id="label-analysisdate">Date for Analysis</label>
+                  <input type="date" id="analysisDate" name="analysisDate" class="luxury-input px-4 py-3 rounded-lg text-sm" required />
+                </div>
+              </div>
+
+              <!-- Submit button with elegant hover effect and sound synth click indicator -->
+              <div class="pt-4 flex flex-col md:flex-row justify-between items-center gap-4">
+                <button type="button" class="sound-btn" id="btn-ambient-sound">
+                  <svg viewBox="0 0 24 24" width="16" height="16" class="sound-off"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM12 4L9.91 6.09 12 8.18V4zm-8 8c0 .55.45 1 1 1h3l3.29 3.29c.63.63 1.71.18 1.71-.71V4.41c0-.89-1.08-1.34-1.71-.71L8 7H5c-.55 0-1 .45-1 1v4zm16.5 0c0 3.07-1.76 5.64-4.5 6.97v2.04c3.83-1.4 6.5-5.05 6.5-9.01s-2.67-7.61-6.5-9.01v2.04c2.74 1.33 4.5 3.9 4.5 6.97z" fill="currentColor"/></svg>
+                  <svg viewBox="0 0 24 24" width="16" height="16" class="sound-on hidden"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" fill="currentColor"/></svg>
+                  <span id="sound-btn-text">136.1 Hz Cosmic Tone</span>
+                </button>
+
+                <button type="submit" class="w-full md:w-auto px-8 py-3 rounded-lg border border-gold text-gold font-inter font-semibold text-xs tracking-[0.25em] uppercase hover:bg-gold hover:text-black hover:shadow-[0_0_15px_rgba(191,149,63,0.4)] hover:scale-105 active:scale-95 transition-all duration-300 relative overflow-hidden" id="submit-btn">
+                  Calculate Cycles
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- Results Dashboard Section (Hidden by default, shown dynamically) -->
+        <section id="resultsSection" class="hidden space-y-12">
+          
+          <!-- Results Header Info -->
+          <div class="text-center max-w-xl mx-auto">
+            <h2 class="font-cinzel text-xl md:text-3xl tracking-[0.2em] text-white uppercase mb-2" id="results-title">Your Current Cycles</h2>
+            <div class="text-xs md:text-sm text-gold tracking-widest font-inter uppercase" id="results-subtitle">Personal Forecast Profile</div>
+            <p class="text-xs md:text-sm text-gold/60 italic font-lora mt-2" id="results-meta-desc">Showing biological rhythms calculated for your analysis date.</p>
+          </div>
+
+          <!-- Circular Gauges Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Gauge Card 1: Physical -->
+            <div class="luxury-card p-6 rounded-2xl flex flex-col items-center justify-between text-center relative overflow-hidden h-full flex-grow">
+              <div class="absolute top-2 right-2 text-gold/20 text-4xl select-none font-bold">01</div>
+              <h3 class="font-cinzel text-base tracking-[0.2em] text-gold font-semibold uppercase mb-4" id="title-physical">Physical</h3>
+              <div class="relative w-40 h-40 flex items-center justify-center mb-4">
+                <!-- Circular SVG Progress Bar -->
+                <svg class="gauge-svg w-full h-full" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="45" stroke-width="4" fill="transparent" class="gauge-track"></circle>
+                  <circle id="physicalGaugeFill" cx="50" cy="50" r="45" stroke-width="5" fill="transparent" stroke="url(#gold-grad-gauge)" class="gauge-fill"></circle>
+                </svg>
+                <div class="absolute flex flex-col items-center justify-center">
+                  <span id="physicalPercent" class="text-2xl font-cinzel tracking-wider text-white">0%</span>
+                  <span class="text-[0.6rem] tracking-[0.2em] text-gold/50 font-inter uppercase" id="label-vigor">Vigor</span>
+                </div>
+              </div>
+              <div id="physicalStatus" class="font-inter text-xs tracking-widest font-semibold uppercase text-gold mb-3 px-3 py-1 rounded bg-gold/5 border border-gold/10">Neutral</div>
+              <p id="physicalDesc" class="text-xs md:text-sm text-gold/70 leading-relaxed font-lora italic px-2">Cycle statistics are not available.</p>
+            </div>
+
+            <!-- Gauge Card 2: Emotional -->
+            <div class="luxury-card p-6 rounded-2xl flex flex-col items-center justify-between text-center relative overflow-hidden h-full flex-grow">
+              <div class="absolute top-2 right-2 text-gold/20 text-4xl select-none font-bold">02</div>
+              <h3 class="font-cinzel text-base tracking-[0.2em] text-[#70a1ff] font-semibold uppercase mb-4" id="title-emotional">Emotional</h3>
+              <div class="relative w-40 h-40 flex items-center justify-center mb-4">
+                <svg class="gauge-svg w-full h-full" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="45" stroke-width="4" fill="transparent" class="gauge-track"></circle>
+                  <circle id="emotionalGaugeFill" cx="50" cy="50" r="45" stroke-width="5" fill="transparent" stroke="#70a1ff" class="gauge-fill"></circle>
+                </svg>
+                <div class="absolute flex flex-col items-center justify-center">
+                  <span id="emotionalPercent" class="text-2xl font-cinzel tracking-wider text-white">0%</span>
+                  <span class="text-[0.6rem] tracking-[0.2em] text-[#70a1ff]/50 font-inter uppercase" id="label-mood">Mood</span>
+                </div>
+              </div>
+              <div id="emotionalStatus" class="font-inter text-xs tracking-widest font-semibold uppercase text-[#70a1ff] mb-3 px-3 py-1 rounded bg-[#70a1ff]/5 border border-[#70a1ff]/10">Neutral</div>
+              <p id="emotionalDesc" class="text-xs md:text-sm text-gold/70 leading-relaxed font-lora italic px-2">Cycle statistics are not available.</p>
+            </div>
+
+            <!-- Gauge Card 3: Intellectual -->
+            <div class="luxury-card p-6 rounded-2xl flex flex-col items-center justify-between text-center relative overflow-hidden h-full flex-grow">
+              <div class="absolute top-2 right-2 text-gold/20 text-4xl select-none font-bold">03</div>
+              <h3 class="font-cinzel text-base tracking-[0.2em] text-[#a4b0be] font-semibold uppercase mb-4" id="title-intellectual">Intellectual</h3>
+              <div class="relative w-40 h-40 flex items-center justify-center mb-4">
+                <svg class="gauge-svg w-full h-full" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="45" stroke-width="4" fill="transparent" class="gauge-track"></circle>
+                  <circle id="intellectualGaugeFill" cx="50" cy="50" r="45" stroke-width="5" fill="transparent" stroke="#a4b0be" class="gauge-fill"></circle>
+                </svg>
+                <div class="absolute flex flex-col items-center justify-center">
+                  <span id="intellectualPercent" class="text-2xl font-cinzel tracking-wider text-white">0%</span>
+                  <span class="text-[0.6rem] tracking-[0.2em] text-[#a4b0be]/50 font-inter uppercase" id="label-acuity">Acuity</span>
+                </div>
+              </div>
+              <div id="intellectualStatus" class="font-inter text-xs tracking-widest font-semibold uppercase text-[#a4b0be] mb-3 px-3 py-1 rounded bg-[#a4b0be]/5 border border-[#a4b0be]/10">Neutral</div>
+              <p id="intellectualDesc" class="text-xs md:text-sm text-gold/70 leading-relaxed font-lora italic px-2">Cycle statistics are not available.</p>
+            </div>
+
+          </div>
+
+          <!-- Forecast Chart Section (30-day view) -->
+          <div class="luxury-card p-6 md:p-8 rounded-2xl">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
+              <div>
+                <h3 class="font-cinzel text-base tracking-[0.2em] text-white uppercase" id="chart-section-title">30-Day Biorhythm Curve</h3>
+                <p class="text-[0.7rem] text-gold/50 font-inter uppercase tracking-[0.1em]" id="chart-section-subtitle">Forecast covering 15 days before and after analysis date</p>
+              </div>
+              
+              <!-- Custom Legend Elements -->
+              <div class="flex flex-wrap gap-4 text-xs font-inter uppercase tracking-wider">
+                <span class="flex items-center gap-2"><span class="w-3 h-1.5 rounded bg-gold block"></span><span id="legend-physical">Physical</span></span>
+                <span class="flex items-center gap-2"><span class="w-3 h-1.5 rounded bg-[#70a1ff] block"></span><span id="legend-emotional">Emotional</span></span>
+                <span class="flex items-center gap-2"><span class="w-3 h-1.5 rounded bg-[#a4b0be] block"></span><span id="legend-intellectual">Intellectual</span></span>
+              </div>
+            </div>
+
+            <!-- Canvas Container -->
+            <div class="relative w-full h-[300px] md:h-[450px]">
+              <canvas id="biorhythmChart"></canvas>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Narrative Section - Scientific Background -->
+        <section class="mt-16 reveal border-t border-gold/10 pt-16" id="narrative-section">
+          <div class="max-w-3xl mx-auto">
+            <h2 class="font-cinzel text-2xl md:text-3xl tracking-[0.2em] text-white uppercase text-center mb-6" id="science-title">The Science of Biorhythms</h2>
+            <div class="w-20 h-[1.5px] bg-gold mx-auto mb-10"></div>
+            
+            <p class="text-sm md:text-base text-gold/70 leading-relaxed font-lora italic text-center mb-8" id="science-intro">
+              Biorhythms are biological cycles that affect our daily lives in three primary areas: physical, emotional, and intellectual. These cycles begin at birth and oscillate in consistent wave-like patterns throughout our lives.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 text-left">
+              <div class="space-y-3">
+                <div class="text-gold text-lg font-cinzel tracking-wider flex items-center gap-2">
+                  <span>01.</span>
+                  <span id="science-p-cycle">Physical Cycle</span>
+                </div>
+                <p class="text-xs md:text-sm text-gold/60 leading-relaxed font-lora italic" id="science-p-cycle-desc">
+                  Physical Cycle (23 days): Governs your energy, strength, and coordination. When high, you feel vigorous; when low, you may need more rest.
+                </p>
+              </div>
+
+              <div class="space-y-3">
+                <div class="text-[#70a1ff] text-lg font-cinzel tracking-wider flex items-center gap-2">
+                  <span>02.</span>
+                  <span id="science-e-cycle">Emotional Cycle</span>
+                </div>
+                <p class="text-xs md:text-sm text-gold/60 leading-relaxed font-lora italic" id="science-e-cycle-desc">
+                  Emotional Cycle (28 days): Influences your mood, creativity, and sensitivity. This cycle affects how you interact with others and perceive the world.
+                </p>
+              </div>
+
+              <div class="space-y-3">
+                <div class="text-[#a4b0be] text-lg font-cinzel tracking-wider flex items-center gap-2">
+                  <span>03.</span>
+                  <span id="science-i-cycle">Intellectual Cycle</span>
+                </div>
+                <p class="text-xs md:text-sm text-gold/60 leading-relaxed font-lora italic" id="science-i-cycle-desc">
+                  Intellectual Cycle (33 days): Affects your concentration, memory, and cognitive skills. Ideal for studying, strategic planning, and complex decisions.
+                </p>
+              </div>
+            </div>
+
+            <div class="luxury-card p-6 mt-12 rounded-xl text-center border-dashed">
+              <h4 class="font-cinzel text-xs md:text-sm tracking-widest text-white uppercase mb-2" id="science-crit-title">Understanding Critical Days</h4>
+              <p class="text-xs text-gold/50 font-lora italic leading-relaxed" id="science-crit-desc">
+                A critical day occurs when a cycle curve crosses the 0% zero line, transitioning from a positive peak to a negative phase, or vice versa. During these crossover days, your energy is unstable, necessitating heightened awareness and focus.
+              </p>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Reusable SVG Gradients and definitions -->
+      <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+        <defs>
+          <linearGradient id="gold-grad-gauge" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#bf953f" />
+            <stop offset="20%" stop-color="#fcf6ba" />
+            <stop offset="50%" stop-color="#b38728" />
+            <stop offset="80%" stop-color="#fbf5b7" />
+            <stop offset="100%" stop-color="#aa771c" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      <!-- Luxury Footer Section -->
+      <footer class="border-t border-gold/10 bg-[#0c0f16]/90 backdrop-blur px-6 md:px-12 py-10 md:py-16 mt-16 w-full text-center">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center text-left">
+          
+          <!-- Brand Info Column -->
+          <div class="md:col-span-4 space-y-4">
+            <div class="flex items-center gap-2">
+              <span class="font-cinzel text-base tracking-[0.2em] text-white">AstroBioRhythm</span>
+            </div>
+            <p class="text-xs text-gold/50 font-lora italic max-w-sm" id="footer-desc">
+              High-end biological forecasting and astrological intelligence systems. Built to guide and empower your biological potentials.
+            </p>
+          </div>
+
+          <!-- Features Links Column -->
+          <div class="md:col-span-4 space-y-3 font-inter text-xs tracking-wider uppercase">
+            <h4 class="font-cinzel text-xs text-white tracking-[0.25em] mb-4" id="footer-features-title">Core Systems</h4>
+            <ul class="space-y-2 text-gold/60">
+              <li><a href="../index.html" class="hover:text-gold transition-colors duration-300" id="footer-f1">Daily Horoscope Readings</a></li>
+              <li><a href="#" class="hover:text-gold transition-colors duration-300" id="footer-f2">Biorhythm Calculator</a></li>
+              <li><a href="../index.html" class="hover:text-gold transition-colors duration-300" id="footer-f3">Natal Chart Analysis</a></li>
+            </ul>
+          </div>
+
+          <!-- Minimal Newsletter Input Column -->
+          <div class="md:col-span-4 space-y-4">
+            <h4 class="font-cinzel text-xs text-white tracking-[0.25em] mb-2 uppercase" id="footer-news-title">Cosmic Chronicles</h4>
+            <p class="text-xs text-gold/50 font-lora italic" id="footer-news-desc">Receive exclusive notifications on major planetary crossovers and personal bio-warnings.</p>
+            <form id="newsletterForm" class="flex gap-2">
+              <input type="email" id="newsEmail" class="luxury-input px-3 py-2 text-xs rounded flex-grow" placeholder="Enter your email" required aria-label="Newsletter email input" />
+              <button type="submit" class="px-4 py-2 border border-gold hover:bg-gold hover:text-black transition-all duration-300 text-gold text-xs font-semibold tracking-wider font-inter uppercase rounded" id="btn-subscribe">Subscribe</button>
+            </form>
+          </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto border-t border-gold/5 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-[0.65rem] tracking-[0.2em] font-inter text-gold/40 uppercase">
+          <div id="footer-copyright">© 2026 AstroBioRhythm | For entertainment purposes only</div>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-gold transition-colors">Privacy</a>
+            <a href="#" class="hover:text-gold transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- JS Libraries Stack -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Interactive Script -->
+    <script>
+      // ────────────────────────────────────────────────────────
+      // 1. DYNAMIC TRANSLATIONS DICTIONARY (Fully self-contained)
+      // ────────────────────────────────────────────────────────
+      const localTranslations = {
+        en: {
+          navBack: "Back to Home",
+          tagline: "Biological Rhythms Decoder",
+          heroTitle: "Cosmic Cycles",
+          heroDesc: "Align your physical vigor, emotional patterns, and intellectual breakthroughs with the mathematical harmony of the universe.",
+          editTitle: "The Three Pillars of Life",
+          editPara1: "Biorhythms are natural biological cycles determined by your moment of birth. From the moment you take your first breath, three distinct cycles govern your life force: the Physical, the Emotional, and the Intellectual.",
+          editPara2: "Knowing when your energy cycles hit their peak or sink to a critical state empowers you to orchestrate your major life decisions, key physical performances, and creative pursuits with maximum tactical advantage.",
+          formTitle: "Birth Information",
+          labelName: "Full Name",
+          labelEmail: "Email (Optional)",
+          labelBirthdate: "Date of Birth",
+          labelAnalysisdate: "Date for Analysis",
+          submitBtn: "Calculate Cycles",
+          resultsTitle: "Your Current Cycles",
+          resultsSubtitle: "Personal Forecast Profile",
+          resultsMeta: "Showing biological rhythms calculated for your analysis date.",
+          vigor: "Vigor",
+          mood: "Mood",
+          acuity: "Acuity",
+          physical: "Physical",
+          emotional: "Emotional",
+          intellectual: "Intellectual",
+          chartTitle: "30-Day Biorhythm Curve",
+          chartSubtitle: "Forecast covering 15 days before and after analysis date",
+          scienceTitle: "The Science of Biorhythms",
+          scienceIntro: "Biorhythms are biological cycles that affect our daily lives in three primary areas: physical, emotional, and intellectual. These cycles begin at birth and oscillate in consistent wave-like patterns throughout our lives.",
+          scienceP: "Physical Cycle",
+          scienceE: "Emotional Cycle",
+          scienceI: "Intellectual Cycle",
+          sciencePDesc: "Physical Cycle (23 days): Governs your energy, strength, and coordination. When high, you feel vigorous; when low, you may need more rest.",
+          scienceEDesc: "Emotional Cycle (28 days): Influences your mood, creativity, and sensitivity. This cycle affects how you interact with others and perceive the world.",
+          scienceIDesc: "Intellectual Cycle (33 days): Affects your concentration, memory, and cognitive skills. Ideal for studying, strategic planning, and complex decisions.",
+          critTitle: "Understanding Critical Days",
+          critDesc: "A critical day occurs when a cycle curve crosses the 0% zero line, transitioning from a positive peak to a negative phase, or vice versa. During these crossover days, your energy is unstable, necessitating heightened awareness and focus.",
+          footerDesc: "High-end biological forecasting and astrological intelligence systems. Built to guide and empower your biological potentials.",
+          footerCore: "Core Systems",
+          footerHoros: "Daily Horoscope Readings",
+          footerBio: "Biorhythm Calculator",
+          footerChart: "Natal Chart Analysis",
+          footerNews: "Cosmic Chronicles",
+          footerNewsDesc: "Receive exclusive notifications on major planetary crossovers and personal bio-warnings.",
+          btnSub: "Subscribe",
+          copyright: "© 2026 AstroBioRhythm | For entertainment purposes only",
+          toneText: "136.1 Hz Cosmic Tone",
+          
+          // Biorhythm cycle statuses
+          physicalPeak: "Physical peak! You're at your very best today.",
+          physicalHigh: "High physical energy. A very good day for activities.",
+          physicalModerate: "Moderate physical energy. Things are going well.",
+          physicalNeutral: "Neutral physical energy. An average day.",
+          physicalLow: "Low physical energy. Take it easy.",
+          physicalVeryLow: "Very low physical energy. Be cautious.",
+          physicalCritical: "Physical critical day! Extra care needed.",
+          
+          emotionalPeak: "Emotional peak! You're feeling incredibly positive.",
+          emotionalHigh: "High emotional energy. Great day for relationships.",
+          emotionalModerate: "Moderate emotional energy. Balanced feelings.",
+          emotionalNeutral: "Neutral emotional energy. Steady mood.",
+          emotionalLow: "Low emotional energy. Be gentle with yourself.",
+          emotionalVeryLow: "Very low emotional energy. Avoid conflicts.",
+          emotionalCritical: "Emotional critical day! Practice patience.",
+          
+          intellectualPeak: "Intellectual peak! Perfect day for learning and problem-solving.",
+          intellectualHigh: "High intellectual energy. Great for mental tasks.",
+          intellectualModerate: "Moderate intellectual energy. Good focus.",
+          intellectualNeutral: "Neutral intellectual energy. Normal thinking.",
+          intellectualLow: "Low intellectual energy. Avoid complex decisions.",
+          intellectualVeryLow: "Very low intellectual energy. Keep it simple.",
+          intellectualCritical: "Intellectual critical day! Double-check everything."
+        },
+        hr: {
+          navBack: "Nazad na Početnu",
+          tagline: "Dekoder Bioloških Ritama",
+          heroTitle: "Kozmički Ciklusi",
+          heroDesc: "Uskladite svoju fizičku snagu, emocionalne obrasce i intelektualne spoznaje s matematičkim skladom svemira.",
+          editTitle: "Tri stupa života",
+          editPara1: "Bioritmovi su prirodni biološki ciklusi određeni vašim trenutkom rođenja. Od trenutka kada prvi put udahnete, tri različita ciklusa upravljaju vašom životnom snagom: fizički, emocionalni i intelektualni.",
+          editPara2: "Znajući kada vaši energetski ciklusi dosegnu vrhunac ili padnu u kritično stanje, možete organizirati svoje važne životne odluke, sportske izvedbe i kreativne napore uz maksimalnu taktičku prednost.",
+          formTitle: "Podaci o rođenju",
+          labelName: "Puno Ime",
+          labelEmail: "E-pošta (opcionalno)",
+          labelBirthdate: "Datum Rođenja",
+          labelAnalysisdate: "Datum za Analizu",
+          submitBtn: "Izračunaj Cikluse",
+          resultsTitle: "Vaši trenutni ciklusi",
+          resultsSubtitle: "Profil osobnog bioritma",
+          resultsMeta: "Prikaz bioloških ritama izračunatih za odabrani datum analize.",
+          vigor: "Energija",
+          mood: "Raspoloženje",
+          acuity: "Fokus",
+          physical: "Fizički",
+          emotional: "Emocionalni",
+          intellectual: "Intelektualni",
+          chartTitle: "Graf Bioritma za 30 Dana",
+          chartSubtitle: "Prognoza koja pokriva 15 dana prije i nakon datuma analize",
+          scienceTitle: "Znanost o Bioritmovima",
+          scienceIntro: "Bioritmovi su biološki ciklusi koji utječu na naš svakodnevni život u tri glavna područja: fizičkom, emocionalnom i intelektualnom. Ovi ciklusi počinju rođenjem i osciliraju u konzistentnim valovitim obrascima tijekom cijelog našeg života.",
+          scienceP: "Fizički Ciklus",
+          scienceE: "Emocionalni Ciklus",
+          scienceI: "Intelektualni Ciklus",
+          sciencePDesc: "Fizički ciklus (23 dana): Upravlja vašom energijom, snagom i koordinacijom. Kada je visok, osjećate se energično; kada je nizak, možda ćete trebati više odmora.",
+          scienceEDesc: "Emocionalni ciklus (28 dana): Utječe na vaše raspoloženje, kreativnost i osjetljivost. Ovaj ciklus utječe na to kako komunicirate s drugima i kako doživljavate svijet.",
+          scienceIDesc: "Intelektualni ciklus (33 dana): Utječe na vaše analitičke sposobnosti, pamćenje i kognitivne vještine. Idealno za učenje, strateško planiranje i donošenje odluka.",
+          critTitle: "Razumijevanje Kritičnih Dana",
+          critDesc: "Kritičan dan nastupa kada krivulja ciklusa presiječe nultu liniju (0%), prelazeći iz pozitivne u negativnu fazu ili obrnuto. Tijekom ovih dana vaša je energija nestabilna, te je potreban pojačan oprez i fokus.",
+          footerDesc: "Vrhunski sustavi biološke prognoze i astrološke inteligencije. Stvoreni da usmjeravaju i osnažuju vaše biološke potencijale.",
+          footerCore: "Glavni Sustavi",
+          footerHoros: "Dnevno Čitanje Horoskopa",
+          footerBio: "Kalkulator Bioritma",
+          footerChart: "Analiza Natalne Karte",
+          footerNews: "Svemirska Kronika",
+          footerNewsDesc: "Primajte ekskluzivne obavijesti o velikim planetarnim prijelazima i osobnim biološkim upozorenjima.",
+          btnSub: "Pretplati se",
+          copyright: "© 2026 AstroBioRhythm | Samo u svrhu zabave",
+          toneText: "136.1 Hz Kozmički Ton",
+          
+          // Biorhythm cycles HR
+          physicalPeak: "Fizički vrhunac! Danas ste u najboljoj formi.",
+          physicalHigh: "Visoka fizička energija. Vrlo dobar dan za aktivnosti.",
+          physicalModerate: "Umjerena fizička energija. Stvari idu dobro.",
+          physicalNeutral: "Neutralna fizička energija. Prosječan dan.",
+          physicalLow: "Niska fizička energija. Uzmite polako.",
+          physicalVeryLow: "Vrlo niska fizička energija. Budite oprezni.",
+          physicalCritical: "Fizički kritičan dan! Potrebna dodatna pažnja.",
+          
+          emotionalPeak: "Emocionalni vrhunac! Osjećate se nevjerojatno pozitivno.",
+          emotionalHigh: "Visoka emocionalna energija. Odličan dan za odnose.",
+          emotionalModerate: "Umjerena emocionalna energija. Uravnoteženi osjećaji.",
+          emotionalNeutral: "Neutralna emocionalna energija. Stabilno raspoloženje.",
+          emotionalLow: "Niska emocionalna energija. Budite nježni prema sebi.",
+          emotionalVeryLow: "Vrlo niska emocionalna energija. Izbjegavajte konflikte.",
+          emotionalCritical: "Emocionalno kritičan dan! Vježbajte strpljenje.",
+          
+          intellectualPeak: "Intelektualni vrhunac! Savršen dan za učenje i rješavanje problema.",
+          intellectualHigh: "Visoka intelektualna energija. Odlično za mentalne zadatke.",
+          intellectualModerate: "Umjerena intelektualna energija. Dobra koncentracija.",
+          intellectualNeutral: "Neutralna intelektualna energija. Normalno razmišljanje.",
+          intellectualLow: "Niska intelektualna energija. Izbjegavajte složene odluke.",
+          intellectualVeryLow: "Vrlo niska intelektualna energija. Držite se jednostavnog.",
+          intellectualCritical: "Intelektualno kritičan dan! Dvostruko provjerite sve."
+        },
+        sr: {
+          navBack: "Назад на Почетну",
+          tagline: "Декодер Биолошких Ритама",
+          heroTitle: "Козмички Циклуси",
+          heroDesc: "Ускладите своју физичку снагу, емоционалне обрасце и интелектуалне спознаје са математичким складом свемира.",
+          editTitle: "Три стуба живота",
+          editPara1: "Биоритмови су природни биолошки циклуси одређени вашим тренутком рођења. Од тренутка када први почеш да дишеш, три различита циклуса управљају твојом животном снагом: физички, емоционални и интелектуални.",
+          editPara2: "Знајући када ваши енергетски циклуси достигну врхунац или падну у критично стање, можете организовати своје важне животне одлуке, спортске изведбе и креативне напоре уз максималну тактичку предност.",
+          formTitle: "Подаци о рођењу",
+          labelName: "Пуно Име",
+          labelEmail: "Е-пошта (опционално)",
+          labelBirthdate: "Datum Rođenja",
+          labelAnalysisdate: "Датум за Анализу",
+          submitBtn: "Израчунај Циклусе",
+          resultsTitle: "Ваши тренутни циклуси",
+          resultsSubtitle: "Профил личног биоритма",
+          resultsMeta: "Приказ биолошких ритама израчунатих за одабрани датум анализе.",
+          vigor: "Енергија",
+          mood: "Расположење",
+          acuity: "Фокус",
+          physical: "Физички",
+          emotional: "Емоционални",
+          intellectual: "Интелектуални",
+          chartTitle: "Граф Биоритма за 30 Дана",
+          chartSubtitle: "Прогноза која покрива 15 дана пре и након датума анализе",
+          scienceTitle: "Наука о Биоритмовима",
+          scienceIntro: "Биоритмови су биолошки циклуси који утичу на наш свакодневни живот у три главне области: физичкој, емоционалној и интелектуалној. Ови циклуси почињу рођењем и осцилирају у конзистентним таласастим обрасцима током целог нашег живота.",
+          scienceP: "Физички Циклус",
+          scienceE: "Емоционални Циклус",
+          scienceI: "Интелектуални Циклус",
+          sciencePDesc: "Физички циклус (23 дана): Управља вашом енергијом, снагом и координацијом. Када је висок, осећате се енергично; када је низак, можда ћете требати више одмора.",
+          scienceEDesc: "Емоционални циклус (28 дана): Утиче на ваше расположење, креативност и осетљивост. Овај циклус утиче на то како комуницирате са другима и како доживљавате свет.",
+          scienceIDesc: "Интелектуални циклус (33 дана): Утиче на ваше аналитичке способности, памћење и когнитивне вештине. Идеално за учење, стратешко планирање и доношење одлука.",
+          critTitle: "Разумевање Критичних Дана",
+          critDesc: "Критичан дан наступа када крива циклуса пресече нулту линију (0%), прелазећи из позитивне у негативну фазу или обрнуто. Током ових дана ваша је енергија нестабилна, те је потребан појачан опрез и фокус.",
+          footerDesc: "Врхунски системи биолошке прогнозе и астролошке интелигенције. Створени да усмеравају и оснажују ваше биолошке потенцијале.",
+          footerCore: "Главни Системи",
+          footerHoros: "Дневно Читање Хороскопа",
+          footerBio: "Калкулатор Биоритма",
+          footerChart: "Анализа Наталне Карте",
+          footerNews: "Свемирска Хроника",
+          footerNewsDesc: "Примајте ексклузивне обавештења о великим планетарним прелазима и личним биолошким упозорењима.",
+          btnSub: "Претплати се",
+          copyright: "© 2026 AstroBioRhythm | Само у сврху забаве",
+          toneText: "136.1 Hz Козмички Тон",
+          
+          // Biorhythm cycles SR
+          physicalPeak: "Физички врхунац! Данас сте у најбољој форми.",
+          physicalHigh: "Висока физичка енергија. Врло добар дан за активности.",
+          physicalModerate: "Умерена физичка енергија. Ствари иду добро.",
+          physicalNeutral: "Неутрална физичка енергија. Просечан дан.",
+          physicalLow: "Ниска физичка енергија. Узмите полако.",
+          physicalVeryLow: "Врло ниска физичка енергија. Будите опрезни.",
+          physicalCritical: "Физички критичан дан! Потребна додатна пажња.",
+          
+          emotionalPeak: "Емоционални врхунац! Осећате се невероватно позитивно.",
+          emotionalHigh: "Висока емоционална енергија. Одличан дан за односе.",
+          emotionalModerate: "Умерена емоционална енергија. Уравнотежена осећања.",
+          emotionalNeutral: "Неутрална емоционална енергија. Стабилно расположење.",
+          emotionalLow: "Ниска емоционална енергија. Будите нежни према себи.",
+          emotionalVeryLow: "Врло ниска емоционална енергија. Избегавајте конфликте.",
+          emotionalCritical: "Емоционално критичан дан! Вежбајте стрпљење.",
+          
+          intellectualPeak: "Интелектуални врхунац! Савршен дан за учење и решавање проблема.",
+          intellectualHigh: "Висока интелектуална енергија. Одлично за менталне задатке.",
+          intellectualModerate: "Умерена интелектуална енергија. Добра концентрација.",
+          intellectualNeutral: "Неутрална интелектуална енергија. Нормално размишљање.",
+          intellectualLow: "Ниска интелектуална енергија. Избегавајте сложене одлуке.",
+          intellectualVeryLow: "Врло ниска интелектуална енергија. Држите се једноставног.",
+          intellectualCritical: "Интелектуално критичан дан! Двоструко проверите све."
+        },
+        sk: {
+          navBack: "Späť na hlavnú stránku",
+          tagline: "Dekodér biologických rytmov",
+          heroTitle: "Kozmické cykly",
+          heroDesc: "Zosúlaďte svoju fyzickú silu, emocionálne vzorce a intelektuálne prelomy s matematickou harmóniou vesmíru.",
+          editTitle: "Tri piliere života",
+          editPara1: "Biorytmy sú prirodzené biologické cykly určené okamihom vašho narodenia. Od chvíle, keď sa prvýkrát nadýchnete, tri odlišné cykly riadia vašu životnú silu: fyzický, emocionálny a intelektuálny.",
+          editPara2: "Vedieť, kedy vaše energetické cykly dosahujú vrchol alebo klesajú do kritického stavu, vám umožňuje plánovať vaše dôležité životné rozhodnutia, kľúčové fyzické výkony a kreatívne aktivity s maximálnou taktickou výhodou.",
+          formTitle: "Informácie o narodení",
+          labelName: "Celé meno",
+          labelEmail: "E-mail (voliteľné)",
+          labelBirthdate: "Dátum narodenia",
+          labelAnalysisdate: "Dátum analýzy",
+          submitBtn: "Vypočítať cykly",
+          resultsTitle: "Vaše aktuálne cykly",
+          resultsSubtitle: "Profil osobného biorytmu",
+          resultsMeta: "Zobrazenie biologických rytmov vypočítaných pre dátum analýzy.",
+          vigor: "Energia",
+          mood: "Nálada",
+          acuity: "Ostrosť",
+          physical: "Fyzický",
+          emotional: "Emocionálny",
+          intellectual: "Intelektuálny",
+          chartTitle: "30-dňová krivka biorytmov",
+          chartSubtitle: "Predpoveď pokrývajúca 15 dní pred a po dátume analýzy",
+          scienceTitle: "Veda o biorytmoch",
+          scienceIntro: "Biorytmy sú biologické cykly, ktoré ovplyvňujú náš každodenný život v troch hlavných oblastiach: fyzickej, emocionálnej a intelektuálnej. Tieto cykly začínajú pri narodení a oscilujú v konzistentných vlnových vzorcoch počas celého nášho života.",
+          scienceP: "Fyzický cyklus",
+          scienceE: "Emocionálny cyklus",
+          scienceI: "Intelektuálny cyklus",
+          sciencePDesc: "Fyzický cyklus (23 dní): Riadi vašu energiu, silu a koordináciu. Keď je na vysokej úrovni, cítite sa vitálne; keď je nízky, môžete potrebovať viac odpočinku.",
+          scienceEDesc: "Emocionálny cyklus (28 dní): Ovplyvňuje vašu náladu, kreativitu a citlivosť. Tento cyklus ovplyvňuje, ako interagujete s ostatnými a vnímate svet.",
+          scienceIDesc: "Intelektuálny cyklus (33 dní): Ovplyvňuje vašu koncentráciu, pamäť a kognitívne schopnosti. Vrcholné obdobia sú ideálne na štúdium, plánovanie a zložité rozhodnutia.",
+          critTitle: "Pochopenie kritických dní",
+          critDesc: "Kritický deň nastáva, keď krivka cyklu prechádza nulovou líniou (0 %), pričom prechádza z kladného vrcholu do zápornej fázy alebo naopak. Počas týchto prechodných dní je vaša energia nestabilná, čo si vyžaduje zvýšenú pozornosť.",
+          footerDesc: "Špičkové biologické predpovede a astrologické informačné systémy. Navrhnuté tak, aby usmerňovali a posilňovali vaše biologické možnosti.",
+          footerCore: "Kľúčové systémy",
+          footerHoros: "Denné horoskopy",
+          footerBio: "Kalkulačka biorytmov",
+          footerChart: "Analýza natalnej karty",
+          footerNews: "Vesmírna kronika",
+          footerNewsDesc: "Dostávajte exkluzívne upozornenia na hlavné planetárne prechody a osobné biovarovania.",
+          btnSub: "Prihlásiť sa",
+          copyright: "© 2026 AstroBioRhythm | Len na zábavné účely",
+          toneText: "Ambiente frekvencia 136.1 Hz",
+          
+          physicalPeak: "Fyzický vrchol! Ste dnes vo svojej najlepšej forme.",
+          physicalHigh: "Visoka fizička energija. Vrlo dobar dan za aktivnosti.",
+          physicalModerate: "Umjerena fizička energija. Stvari idu dobro.",
+          physicalNeutral: "Neutralna fizička energija. Prosječan dan.",
+          physicalLow: "Niska fizička energija. Uzmite polako.",
+          physicalVeryLow: "Vrlo niska fizička energija. Budite oprezni.",
+          physicalCritical: "Fizički kritičan dan! Potrebna dodatna pažnja.",
+          emotionalPeak: "Emocionálny vrchol! Cítite sa neskutočne pozitívne.",
+          emotionalHigh: "Visoka emocionalna energija. Odličan dan za odnose.",
+          emotionalModerate: "Umjerena emocionalna energija. Uravnoteženi osjećaji.",
+          emotionalNeutral: "Neutralna emocionalna energija. Stabilno raspoloženje.",
+          emotionalLow: "Niska emocionalna energija. Budite nježni prema sebi.",
+          emotionalVeryLow: "Vrlo niska emocionalna energija. Izbjegavajte konflikte.",
+          emotionalCritical: "Emocionalno kritičan dan! Vježbajte strpljenje.",
+          intellectualPeak: "Intelektuálny vrchol! Ideálny deň na štúdium a riešenie problémov.",
+          intellectualHigh: "Visoka intelektualna energija. Odlično za mentalne zadatke.",
+          intellectualModerate: "Umjerena intelektualna energija. Dobra koncentracija.",
+          intellectualNeutral: "Neutralna intelektualna energija. Normalno razmišljanje.",
+          intellectualLow: "Niska intelektualna energija. Izbjegavajte složene odluke.",
+          intellectualVeryLow: "Vrlo niska intelektualna energija. Držite se jednoduchého.",
+          intellectualCritical: "Intelektualno kritičan dan! Dvostruko provjerite sve."
+        },
+        de: {
+          navBack: "Zurück zur Startseite",
+          tagline: "Dekodierer für Biorhythmen",
+          heroTitle: "Kosmische Zyklen",
+          heroDesc: "Stimmen Sie Ihre körperliche Kraft, Ihre emotionalen Muster und Ihre intellektuellen Durchbrüche auf die mathematische Harmonie des Universums ab.",
+          editTitle: "Die drei Säulen des Lebens",
+          editPara1: "Biorhythmen sind natürliche biologische Zyklen, die durch den Moment Ihrer Geburt bestimmt werden. Ab dem Moment Ihres ersten Atemzugs bestimmen drei unterschiedliche Zyklen Ihre Lebenskraft: der körperliche, der emotionale und der intellektuelle.",
+          editPara2: "Wenn Sie wissen, wann Ihre Energiezyklen ihren Höhepunkt erreichen oder in einen kritischen Zustand sinken, können Sie Ihre wichtigen Lebensentscheidungen, sportlichen Leistungen und kreativen Bemühungen mit maximalem taktischen Vorteil abstimmen.",
+          formTitle: "Geburtsdaten",
+          labelName: "Vollständiger Name",
+          labelEmail: "E-Mail (Optional)",
+          labelBirthdate: "Geburtsdatum",
+          labelAnalysisdate: "Analysedatum",
+          submitBtn: "Zyklen berechnen",
+          resultsTitle: "Ihre aktuellen Zyklen",
+          resultsSubtitle: "Profil des persönlichen Biorhythmus",
+          resultsMeta: "Anzeige der für Ihr Analysedatum berechneten Biorhythmen.",
+          vigor: "Energie",
+          mood: "Stimmung",
+          acuity: "Fokus",
+          physical: "Körperlich",
+          emotional: "Emotional",
+          intellectual: "Intellektuell",
+          chartTitle: "30-Tage Biorhythm-Kurve",
+          chartSubtitle: "Vorhersage für 15 Tage vor und nach dem Analysedatum",
+          scienceTitle: "Die Wissenschaft der Biorhythmen",
+          scienceIntro: "Biorhythmen sind biologische Zyklen, die unser tägliches Leben in drei Hauptbereichen beeinflussen: dem körperlichen, dem emotionalen und dem intellektuellen. Diese Zyklen beginnen mit der Geburt und schwingen während unseres gesamten Lebens in konsistenten Wellenmustern.",
+          scienceP: "Körperlicher Zyklus",
+          scienceE: "Emotionaler Zyklus",
+          scienceI: "Intellektueller Zyklus",
+          sciencePDesc: "Körperlicher Zyklus (23 Tage): Steuert Ihre Energie, Kraft und Koordination. Wenn er hoch ist, fühlen Sie sich vital; wenn er niedrig ist, benötigen Sie möglicherweise mehr Ruhe.",
+          scienceEDesc: "Emotionaler Zyklus (28 Tage): Beeinflusst Ihre Stimmung, Kreativität und Empfindlichkeit. Dieser Zyklus beeinflusst, wie Sie mit anderen interagieren und die Welt wahrnehmen.",
+          scienceIDesc: "Intellektueller Zyklus (33 Tage): Beeinflusst Ihre Konzentration, Ihr Gedächtnis und Ihre kognitiven Fähigkeiten. Spitzenzeiten sind ideal zum Lernen, für strategische Planung und komplexe Entscheidungen.",
+          critTitle: "Kritische Tage verstehen",
+          critDesc: "Ein kritischer Tag tritt auf, wenn eine Zykluskurve die 0%-Linie schneidet, also von einer positiven in eine negative Phase übergeht oder umgekehrt. An diesen Übergangstagen ist Ihre Energie instabil, was erhöhte Wachsamkeit und Fokus erfordert.",
+          footerDesc: "Erstklassige biologische Vorhersagen und astrologische Informationssysteme. Entwickelt, um Ihre biologischen Potenziale zu lenken und zu stärken.",
+          footerCore: "Hauptsysteme",
+          footerHoros: "Tägliches Horoskop",
+          footerBio: "Biorhythmus-Rechner",
+          footerChart: "Geburtshoroskop-Analyse",
+          footerNews: "Kosmische Chronik",
+          footerNewsDesc: "Erhalten Sie exklusive Benachrichtigungen über wichtige planetare Übergänge und persönliche Bio-Warnungen.",
+          btnSub: "Abonnieren",
+          copyright: "© 2026 AstroBioRhythm | Nur zur Unterhaltung",
+          toneText: "Kosmischer Ton (136.1 Hz)",
+          
+          physicalPeak: "Körperlicher Höhepunkt! Sie sind heute in Bestform.",
+          physicalHigh: "High physical energy. A very good day for activities.",
+          physicalModerate: "Moderate physical energy. Things are going well.",
+          physicalNeutral: "Neutral physical energy. An average day.",
+          physicalLow: "Low physical energy. Take it easy.",
+          physicalVeryLow: "Very low physical energy. Be cautious.",
+          physicalCritical: "Physical critical day! Extra care needed.",
+          emotionalPeak: "Emotionaler Höhepunkt! Sie fühlen sich unglaublich positiv.",
+          emotionalHigh: "High emotional energy. Great day for relationships.",
+          emotionalModerate: "Moderate emotional energy. Balanced feelings.",
+          emotionalNeutral: "Neutral emotional energy. Steady mood.",
+          emotionalLow: "Low emotional energy. Be gentle with yourself.",
+          emotionalVeryLow: "Very low emotional energy. Avoid conflicts.",
+          emotionalCritical: "Emotional critical day! Practice patience.",
+          intellectualPeak: "Intellektueller Höhepunkt! Perfekter Tag zum Lernen und Problemlösen.",
+          intellectualHigh: "High intellectual energy. Great for mental tasks.",
+          intellectualModerate: "Moderate intellectual energy. Good focus.",
+          intellectualNeutral: "Neutral intellectual energy. Normal thinking.",
+          intellectualLow: "Low intellectual energy. Avoid complex decisions.",
+          intellectualVeryLow: "Very low intellectual energy. Keep it simple.",
+          intellectualCritical: "Intellectual critical day! Double-check everything."
+        }
+      };
+
+      // Add fallback translations for languages not fully listed locally
+      localTranslations.fr = localTranslations.en;
+      localTranslations.it = localTranslations.en;
+      localTranslations.hu = localTranslations.en;
+
+      // ────────────────────────────────────────────────────────
+      // 2. STATE MANAGEMENT & DYNAMIC STYLING
+      // ────────────────────────────────────────────────────────
+      const state = {
+        language: 'en',
+        theme: 'platinum',
+        userProfile: null,
+        chartInstance: null
+      };
+
+      // Audio drone sound settings
+      let audioCtx = null;
+      let oscillator = null;
+      let gainNode = null;
+      let isPlaying = false;
+
+      // Initialize Page
+      window.addEventListener('DOMContentLoaded', () => {
+        loadSettings();
+        syncUserProfile();
+        setupEventListeners();
+        applyLanguage();
+        generateStars();
+        initCursorGlow();
+        
+        // Auto-run if profile is loaded
+        if (state.userProfile && state.userProfile.birthDate) {
+          calculateBiorhythms();
+        }
+      });
+
+      // Load theme and language from localStorage
+      function loadSettings() {
+        // Read theme settings from homepage devica_settings key
+        const settingsStr = localStorage.getItem('devica_settings');
+        if (settingsStr) {
+          try {
+            const settings = JSON.parse(settingsStr);
+            if (settings && settings.theme) {
+              state.theme = settings.theme;
+            }
+          } catch(e) {
+            console.error("Error reading devica_settings:", e);
+          }
+        }
+        
+        // Apply theme classes
+        document.body.className = `theme-${state.theme} font-lora`;
+
+        // Read language from settings, default to EN
+        const langDropdown = document.getElementById('languageSelect');
+        const lang = localStorage.getItem('astrobiorhythm_lang') || 'en';
+        state.language = lang;
+        langDropdown.value = lang;
+      }
+
+      // Sync User details from home page calculations
+      function syncUserProfile() {
+        const savedData = localStorage.getItem('astrobiorhythm_user_data');
+        if (savedData) {
+          try {
+            const profile = JSON.parse(savedData);
+            if (profile) {
+              state.userProfile = profile;
+              document.getElementById('userName').value = profile.name || '';
+              document.getElementById('userEmail').value = profile.email || '';
+              
+              if (profile.birthDate) {
+                // Pre-fill date of birth
+                const dateParts = profile.birthDate.split('T');
+                document.getElementById('birthDate').value = dateParts[0];
+              }
+            }
+          } catch(e) {
+            console.error("Error reading astrobiorhythm_user_data:", e);
+          }
+        }
+
+        // Default Date for Analysis to today's local date
+        const todayStr = new Date().toISOString().split('T')[0];
+        document.getElementById('analysisDate').value = todayStr;
+      }
+
+      function setupEventListeners() {
+        // Form submission
+        document.getElementById('biorhythmForm').addEventListener('submit', (e) => {
+          e.preventDefault();
+          calculateBiorhythms();
+        });
+
+        // Language Select dropdown
+        document.getElementById('languageSelect').addEventListener('change', (e) => {
+          state.language = e.target.value;
+          localStorage.setItem('astrobiorhythm_lang', state.language);
+          applyLanguage();
+          if (state.userProfile) {
+            calculateBiorhythms();
+          }
+        });
+
+        // Audio controls
+        const audioButtons = document.querySelectorAll('#btn-ambient-sound');
+        audioButtons.forEach(btn => {
+          btn.addEventListener('click', toggleAudio);
+        });
+
+        // Scroll reveals
+        window.addEventListener('scroll', handleScrollReveal, { passive: true });
+        handleScrollReveal();
+      }
+
+      // Dynamic localization logic
+      function applyLanguage() {
+        const t = localTranslations[state.language] || localTranslations.en;
+        
+        // Navigation & Titles
+        document.getElementById('nav-back-text').textContent = t.navBack;
+        document.getElementById('hero-tagline').textContent = t.tagline;
+        document.getElementById('hero-title').textContent = t.heroTitle;
+        document.getElementById('hero-desc').textContent = t.heroDesc;
+        
+        // Editorial details
+        document.getElementById('edit-title').textContent = t.editTitle;
+        document.getElementById('edit-para-1').textContent = t.editPara1;
+        document.getElementById('edit-para-2').textContent = t.editPara2;
+        
+        // Form elements
+        document.getElementById('form-card-title').textContent = t.formTitle;
+        document.getElementById('label-name').textContent = t.labelName;
+        document.getElementById('label-email').textContent = t.labelEmail;
+        document.getElementById('label-birthdate').textContent = t.labelBirthdate;
+        document.getElementById('label-analysisdate').textContent = t.labelAnalysisdate;
+        document.getElementById('submit-btn').textContent = t.submitBtn;
+        document.getElementById('sound-btn-text').textContent = t.toneText;
+
+        // Results Section Details
+        document.getElementById('results-title').textContent = t.resultsTitle;
+        document.getElementById('results-subtitle').textContent = t.resultsSubtitle;
+        document.getElementById('results-meta-desc').textContent = t.resultsMeta;
+        
+        // Gauge headers
+        document.getElementById('title-physical').textContent = t.physical;
+        document.getElementById('title-emotional').textContent = t.emotional;
+        document.getElementById('title-intellectual').textContent = t.intellectual;
+        
+        // Inner gauge labels
+        document.getElementById('label-vigor').textContent = t.vigor;
+        document.getElementById('label-mood').textContent = t.mood;
+        document.getElementById('label-acuity').textContent = t.acuity;
+
+        // Chart sections
+        document.getElementById('chart-section-title').textContent = t.chartTitle;
+        document.getElementById('chart-section-subtitle').textContent = t.chartSubtitle;
+        document.getElementById('legend-physical').textContent = t.physical;
+        document.getElementById('legend-emotional').textContent = t.emotional;
+        document.getElementById('legend-intellectual').textContent = t.intellectual;
+
+        // Science explanation segment
+        document.getElementById('science-title').textContent = t.scienceTitle;
+        document.getElementById('science-intro').textContent = t.scienceIntro;
+        document.getElementById('science-p-cycle').textContent = t.scienceP;
+        document.getElementById('science-e-cycle').textContent = t.scienceE;
+        document.getElementById('science-i-cycle').textContent = t.scienceI;
+        document.getElementById('science-p-cycle-desc').textContent = t.sciencePDesc;
+        document.getElementById('science-e-cycle-desc').textContent = t.scienceEDesc;
+        document.getElementById('science-i-cycle-desc').textContent = t.scienceIDesc;
+        document.getElementById('science-crit-title').textContent = t.critTitle;
+        document.getElementById('science-crit-desc').textContent = t.critDesc;
+
+        // Footer localization
+        document.getElementById('footer-desc').textContent = t.footerDesc;
+        document.getElementById('footer-features-title').textContent = t.footerCore;
+        document.getElementById('footer-f1').textContent = t.footerHoros;
+        document.getElementById('footer-f2').textContent = t.footerBio;
+        document.getElementById('footer-f3').textContent = t.footerChart;
+        document.getElementById('footer-news-title').textContent = t.footerNews;
+        document.getElementById('footer-news-desc').textContent = t.footerNewsDesc;
+        document.getElementById('newsEmail').placeholder = (state.language === 'hr' || state.language === 'sr') ? 'Unesite vaš email' : 'Enter your email';
+        document.getElementById('btn-subscribe').textContent = t.btnSub;
+        document.getElementById('footer-copyright').textContent = t.copyright;
+      }
+
+      // Intersection Observer implementation for scroll reveals
+      function handleScrollReveal() {
+        const reveals = document.querySelectorAll('.reveal');
+        reveals.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          const viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+          if (rect.top <= viewHeight * 0.85) {
+            el.classList.add('revealed');
+          }
+        });
+      }
+
+      // Ambient Audio Synthesizer (Cosmic Tone 136.1 Hz matching OM frequency)
+      function toggleAudio() {
+        if (isPlaying) {
+          stopAmbientTone();
+        } else {
+          startAmbientTone();
+        }
+      }
+
+      function startAmbientTone() {
+        try {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          oscillator = audioCtx.createOscillator();
+          gainNode = audioCtx.createGain();
+          
+          oscillator.type = 'sine';
+          oscillator.frequency.value = 136.1; // Cosmic OM planetary octave frequency
+          
+          gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+          gainNode.gain.linearRampToValueAtTime(0.04, audioCtx.currentTime + 1.5); // soft fade-in
+          
+          oscillator.connect(gainNode);
+          gainNode.connect(audioCtx.destination);
+          
+          oscillator.start();
+          isPlaying = true;
+          
+          // Toggle UI state
+          document.querySelectorAll('.sound-off').forEach(el => el.classList.add('hidden'));
+          document.querySelectorAll('.sound-on').forEach(el => el.classList.remove('hidden'));
+        } catch(e) {
+          console.error("Audio Context initialization failed:", e);
+        }
+      }
+
+      // Stop ambient sound
+      function stopAmbientTone() {
+        if (audioCtx && isPlaying) {
+          gainNode.gain.setValueAtTime(gainNode.gain.value, audioCtx.currentTime);
+          gainNode.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.5); // fade out
+          setTimeout(() => {
+            if (oscillator) oscillator.stop();
+            isPlaying = false;
+            // Update UI icons
+            document.querySelectorAll('.sound-off').forEach(el => el.classList.remove('hidden'));
+            document.querySelectorAll('.sound-on').forEach(el => el.classList.add('hidden'));
+          }, 600);
+        }
+      }
+
+      // ────────────────────────────────────────────────────────
+      // 3. MATHEMATICAL BIORHYTHM CALCULATIONS & CHARTS
+      // ────────────────────────────────────────────────────────
+      function calculateBiorhythms() {
+        const name = document.getElementById('userName').value.trim();
+        const birthDateVal = document.getElementById('birthDate').value;
+        const analysisDateVal = document.getElementById('analysisDate').value;
+
+        if (!name || !birthDateVal || !analysisDateVal) return;
+
+        const birthDate = new Date(birthDateVal);
+        const analysisDate = new Date(analysisDateVal);
+        
+        // Normalize time to 12:00 PM to avoid daylight saving/timezone rounding anomalies
+        birthDate.setHours(12, 0, 0, 0);
+        analysisDate.setHours(12, 0, 0, 0);
+
+        // Save input state locally to sync back to homepage
+        const profile = {
+          name: name,
+          email: document.getElementById('userEmail').value.trim(),
+          birthDate: birthDateVal + 'T12:00:00',
+          birthTimeStr: '12:00',
+          birthPlace: '',
+          birthState: '',
+          birthCity: ''
+        };
+        localStorage.setItem('astrobiorhythm_user_data', JSON.stringify(profile));
+        state.userProfile = profile;
+
+        // Perform calculation
+        const diffTime = analysisDate.getTime() - birthDate.getTime();
+        const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+        if (diffDays < 0) {
+          Swal.fire({
+            title: state.language === 'hr' ? 'Pogrešan Datum' : 'Invalid Date',
+            text: state.language === 'hr' ? 'Datum rođenja mora biti prije datuma analize.' : 'Date of birth must be before the date of analysis.',
+            icon: 'warning',
+            confirmButtonColor: '#bf953f'
+          });
+          return;
+        }
+
+        // Sine calculations for biological cycles
+        const PHYSICAL_CYCLE = 23;
+        const EMOTIONAL_CYCLE = 28;
+        const INTELLECTUAL_CYCLE = 33;
+
+        const physVal = Math.sin((2 * Math.PI * diffDays) / PHYSICAL_CYCLE);
+        const emotVal = Math.sin((2 * Math.PI * diffDays) / EMOTIONAL_CYCLE);
+        const intelVal = Math.sin((2 * Math.PI * diffDays) / INTELLECTUAL_CYCLE);
+
+        // Percent conversions (0 to 100)
+        const physPercent = Math.round((physVal + 1) * 50);
+        const emotPercent = Math.round((emotVal + 1) * 50);
+        const intelPercent = Math.round((intelVal + 1) * 50);
+
+        // Display results block with GSAP animation reveal
+        const resultsEl = document.getElementById('resultsSection');
+        resultsEl.classList.remove('hidden');
+
+        // Scroll to results cleanly
+        gsap.fromTo(resultsEl, 
+          { opacity: 0, y: 50 }, 
+          { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', clearProps: 'transform' }
+        );
+
+        resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Update gauges percent text
+        document.getElementById('physicalPercent').textContent = `${physPercent}%`;
+        document.getElementById('emotionalPercent').textContent = `${emotPercent}%`;
+        document.getElementById('intellectualPercent').textContent = `${intelPercent}%`;
+
+        // Update gauge stroke rings (dasharray constant 283 matches 2 * PI * r, where r = 45)
+        const pOffset = 283 - (physPercent / 100) * 283;
+        const eOffset = 283 - (emotPercent / 100) * 283;
+        const iOffset = 283 - (intelPercent / 100) * 283;
+
+        document.getElementById('physicalGaugeFill').style.strokeDashoffset = pOffset;
+        document.getElementById('emotionalGaugeFill').style.strokeDashoffset = eOffset;
+        document.getElementById('intellectualGaugeFill').style.strokeDashoffset = iOffset;
+
+        // Retrieve descriptions and statuses
+        updateStatusLabels(physVal, physPercent, 'physical', 'physicalStatus', 'physicalDesc');
+        updateStatusLabels(emotVal, emotPercent, 'emotional', 'emotionalStatus', 'emotionalDesc');
+        updateStatusLabels(intelVal, intelPercent, 'intellectual', 'intellectualStatus', 'intellectualDesc');
+
+        // Plot Forecast Curve
+        drawForecastChart(birthDate, analysisDate);
+      }
+
+      function updateStatusLabels(value, percent, type, labelId, descId) {
+        const t = localTranslations[state.language] || localTranslations.en;
+        let statusText = "";
+        let descText = "";
+
+        if (value > 0.8) {
+          statusText = (state.language === 'hr' || state.language === 'sr') ? "VRHUNAC" : "PEAK";
+          descText = t[`${type}Peak`];
+        } else if (value > 0.2) {
+          statusText = (state.language === 'hr' || state.language === 'sr') ? "VISOK" : "HIGH";
+          descText = t[`${type}High`];
+        } else if (value >= -0.2) {
+          statusText = (state.language === 'hr' || state.language === 'sr') ? "NEUTRALAN" : "NEUTRAL";
+          descText = t[`${type}Neutral`];
+        } else if (value > -0.8) {
+          statusText = (state.language === 'hr' || state.language === 'sr') ? "NIZAK" : "LOW";
+          descText = t[`${type}Low`];
+        } else {
+          statusText = (state.language === 'hr' || state.language === 'sr') ? "KRITIČAN" : "CRITICAL";
+          descText = t[`${type}Critical`];
+        }
+
+        const labelEl = document.getElementById(labelId);
+        labelEl.textContent = statusText;
+
+        // Change critical colors dynamically to reflect danger/peak
+        if (value > 0.8) {
+          labelEl.className = "font-inter text-xs tracking-widest font-semibold uppercase text-emerald-400 mb-3 px-3 py-1 rounded bg-emerald-500/5 border border-emerald-500/20";
+        } else if (value < -0.8) {
+          labelEl.className = "font-inter text-xs tracking-widest font-semibold uppercase text-rose-500 mb-3 px-3 py-1 rounded bg-rose-500/5 border border-rose-500/20 animate-pulse";
+        } else {
+          // Standard style
+          const themeStyles = {
+            physical: 'text-gold bg-gold/5 border-gold/10',
+            emotional: 'text-[#70a1ff] bg-[#70a1ff]/5 border-[#70a1ff]/10',
+            intellectual: 'text-[#a4b0be] bg-[#a4b0be]/5 border-[#a4b0be]/10'
+          };
+          labelEl.className = `font-inter text-xs tracking-widest font-semibold uppercase mb-3 px-3 py-1 rounded border ${themeStyles[type]}`;
+        }
+
+        document.getElementById(descId).textContent = descText;
+      }
+
+      // Retrieves theme properties matching style-enhanced.css
+      function getThemeColors() {
+        const isParchment = document.body.classList.contains('theme-parchment');
+        const style = getComputedStyle(document.body);
+        const goldPrimary = style.getPropertyValue('--gold-primary').trim() || '#bf953f';
+        const textMain = style.getPropertyValue('--color-text-main').trim() || (isParchment ? '#2a2016' : '#f0f3f8');
+        const textMuted = style.getPropertyValue('--color-text-muted').trim() || (isParchment ? '#786b5c' : '#8fa0b5');
+        const gridColor = isParchment ? 'rgba(42, 32, 22, 0.1)' : 'rgba(255, 255, 255, 0.08)';
+        const zeroGridColor = isParchment ? 'rgba(170, 119, 28, 0.3)' : 'rgba(191, 149, 63, 0.3)';
+        
+        let physical = '#bf953f';
+        let emotional = '#70a1ff';
+        let intellectual = '#a4b0be';
+        
+        if (document.body.classList.contains('theme-earth')) {
+          physical = '#cd7f32';
+          emotional = '#789072';
+          intellectual = '#4e6349';
+        } else if (document.body.classList.contains('theme-clay')) {
+          physical = '#cd7f32';
+          emotional = '#e08244';
+          intellectual = '#a05a1e';
+        } else if (document.body.classList.contains('theme-celestial')) {
+          physical = '#bf953f';
+          emotional = '#7986cb';
+          intellectual = '#4fc3f7';
+        } else if (document.body.classList.contains('theme-parchment')) {
+          physical = '#aa771c';
+          emotional = '#8c6239';
+          intellectual = '#2a2016';
+        }
+        
+        return { physical, emotional, intellectual, textMain, textMuted, gridColor, zeroGridColor, goldPrimary };
+      }
+
+      function drawForecastChart(birthDate, analysisDate) {
+        const canvas = document.getElementById('biorhythmChart');
+        if (!canvas) return;
+
+        if (state.chartInstance) {
+          state.chartInstance.destroy();
+        }
+
+        const colors = getThemeColors();
+        const daysToShow = 30;
+        const halfRange = Math.floor(daysToShow / 2);
+        
+        const labels = [];
+        const physData = [];
+        const emotData = [];
+        const intelData = [];
+
+        // Generate data for +/- 15 days around analysis date
+        for (let i = -halfRange; i <= halfRange; i++) {
+          const evalDate = new Date(analysisDate);
+          evalDate.setDate(analysisDate.getDate() + i);
+          
+          labels.push(evalDate.toLocaleDateString(state.language, { month: 'short', day: 'numeric' }));
+
+          const diffTime = evalDate.getTime() - birthDate.getTime();
+          const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+          const physVal = Math.sin((2 * Math.PI * diffDays) / 23);
+          const emotVal = Math.sin((2 * Math.PI * diffDays) / 28);
+          const intelVal = Math.sin((2 * Math.PI * diffDays) / 33);
+
+          physData.push(physVal);
+          emotData.push(emotVal);
+          intelData.push(intelVal);
+        }
+
+        const ctx = canvas.getContext('2d');
+        state.chartInstance = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: localTranslations[state.language].physical,
+                data: physData,
+                borderColor: colors.physical,
+                backgroundColor: colors.physical + '0a',
+                tension: 0.4,
+                borderWidth: 2,
+                pointRadius: (ctx) => ctx.dataIndex === halfRange ? 6 : 0,
+                pointHoverRadius: 6,
+                pointBackgroundColor: colors.physical,
+                fill: true
+              },
+              {
+                label: localTranslations[state.language].emotional,
+                data: emotData,
+                borderColor: colors.emotional,
+                backgroundColor: colors.emotional + '0a',
+                tension: 0.4,
+                borderWidth: 2,
+                pointRadius: (ctx) => ctx.dataIndex === halfRange ? 6 : 0,
+                pointHoverRadius: 6,
+                pointBackgroundColor: colors.emotional,
+                fill: true
+              },
+              {
+                label: localTranslations[state.language].intellectual,
+                data: intelData,
+                borderColor: colors.intellectual,
+                backgroundColor: colors.intellectual + '0a',
+                tension: 0.4,
+                borderWidth: 2,
+                pointRadius: (ctx) => ctx.dataIndex === halfRange ? 6 : 0,
+                pointHoverRadius: 6,
+                pointBackgroundColor: colors.intellectual,
+                fill: true
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: false
+              },
+              tooltip: {
+                mode: 'index',
+                intersect: false,
+                backgroundColor: 'rgba(12,15,22,0.9)',
+                borderColor: colors.goldPrimary,
+                borderWidth: 1,
+                bodyFont: { family: "'Inter', sans-serif" },
+                titleFont: { family: "'Cinzel', serif", size: 12 },
+                callbacks: {
+                  label: function(context) {
+                    let label = context.dataset.label || '';
+                    if (label) {
+                      label += ': ';
+                    }
+                    if (context.parsed.y !== null) {
+                      label += Math.round((context.parsed.y + 1) * 50) + '%';
+                    }
+                    return label;
+                  }
+                }
+              }
+            },
+            scales: {
+              y: {
+                min: -1.05,
+                max: 1.05,
+                grid: {
+                  color: (ctx) => ctx.tick.value === 0 ? colors.zeroGridColor : colors.gridColor
+                },
+                ticks: {
+                  color: colors.textMuted,
+                  font: { family: "'Lora', serif" },
+                  callback: function(value) {
+                    return Math.round((value + 1) * 50) + '%';
+                  }
+                }
+              },
+              x: {
+                grid: {
+                  color: colors.gridColor
+                },
+                ticks: {
+                  color: (value, index) => index === halfRange ? '#fff' : colors.textMuted,
+                  font: {
+                    family: "'Lora', serif",
+                    weight: (ctx) => ctx.index === halfRange ? 'bold' : 'normal'
+                  }
+                }
+              }
+            }
+          }
+        });
+      }
+
+      // ────────────────────────────────────────────────────────
+      // 4. STARFIELD PARTICLES GENERATOR & GLOWING CURSOR
+      // ────────────────────────────────────────────────────────
+      function generateStars() {
+        const canvas = document.getElementById('stars-canvas');
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+        const starCount = 120;
+
+        function resize() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+          initStars();
+        }
+
+        function initStars() {
+          stars = [];
+          for (let i = 0; i < starCount; i++) {
+            stars.push({
+              x: Math.random() * canvas.width,
+              y: Math.random() * canvas.height,
+              size: Math.random() * 1.8 + 0.3,
+              alpha: Math.random(),
+              speed: Math.random() * 0.02 + 0.005,
+              twinkleRate: Math.random() * 0.015 + 0.005
+            });
+          }
+        }
+
+        // Slow drifting star animation loop
+        function animate() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = '#ffffff';
+
+          stars.forEach(star => {
+            // Adjust alpha for twinkling
+            star.alpha += star.twinkleRate;
+            if (star.alpha > 1 || star.alpha < 0.1) {
+              star.twinkleRate = -star.twinkleRate;
+            }
+
+            // Draw star
+            ctx.globalAlpha = star.alpha;
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Drifting displacement
+            star.y -= star.speed;
+            if (star.y < 0) {
+              star.y = canvas.height;
+              star.x = Math.random() * canvas.width;
+            }
+          });
+
+          requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+        animate();
+      }
+
+      function initCursorGlow() {
+        if (window.matchMedia('(pointer: coarse)').matches) return; // skip mobiles
+        const glow = document.getElementById('cursor-glow');
+        if (!glow) return;
+
+        let mouseX = 0, mouseY = 0;
+        let glowX = 0, glowY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          glow.style.opacity = '1';
+        }, { passive: true });
+
+        document.addEventListener('mouseleave', () => {
+          glow.style.opacity = '0';
+        });
+
+        function animateCursor() {
+          glowX += (mouseX - glowX) * 0.1;
+          glowY += (mouseY - glowY) * 0.1;
+          glow.style.left = `${glowX}px`;
+          glow.style.top = `${glowY}px`;
+          requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+      }
+    </script>
+  </body>
+</html>
