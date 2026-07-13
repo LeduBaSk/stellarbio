@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lav: Peti Znak Zodijaka — Astrološki Vodič</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Kraljevska interaktivna web knjiga o petom znaku zodijaka. Detaljan vodič kroz arhetip suverenosti, mitologiju, Sunce, somatsku biologiju srca, kičme i pogleda, i duhovnu alhemiju Lava.">
+  <meta name="keywords" content="lav horoskop, astrologija lav, sunce vladar, dekanati lava, alhemija srca, nemejski lav, suverenost, somatski vodič">
+  <meta name="author" content="LeduBaSK">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <script type="module" crossorigin src="./assets/index-CTbdsSd6.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-C5wNlVjJ.css">
+</head>
+<body class="theme-platinum">
+
+  <!-- Reusable SVG Ornaments Defs -->
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+    <defs>
+      <!-- Gold Gradient -->
+      <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#bf953f" />
+        <stop offset="20%" stop-color="#fcf6ba" />
+        <stop offset="40%" stop-color="#b38728" />
+        <stop offset="60%" stop-color="#fbf5b7" />
+        <stop offset="80%" stop-color="#d4a73a" />
+        <stop offset="100%" stop-color="#aa771c" />
+      </linearGradient>
+
+      <!-- Dark Gold Gradient for depth -->
+      <linearGradient id="gold-grad-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#8c6b1e" />
+        <stop offset="50%" stop-color="#bf953f" />
+        <stop offset="100%" stop-color="#8c6b1e" />
+      </linearGradient>
+
+      <!-- Corner Filigree Ornament -->
+      <symbol id="svg-corner" viewBox="0 0 120 120">
+        <path d="M 6 120 L 6 6 L 120 6" fill="none" stroke="url(#gold-grad)" stroke-width="2.5" />
+        <path d="M 14 120 L 14 14 L 120 14" fill="none" stroke="url(#gold-grad)" stroke-width="1" />
+        <path d="M 14 14 C 28 28, 35 15, 30 30 C 25 40, 10 35, 14 20" fill="none" stroke="url(#gold-grad)" stroke-width="1.2" />
+        <path d="M 6 45 C 18 35, 24 24, 14 14 C 24 24, 35 18, 45 6" fill="none" stroke="url(#gold-grad)" stroke-width="1.2" />
+        <path d="M 6 65 C 22 55, 32 32, 14 14 C 32 32, 55 22, 65 6" fill="none" stroke="url(#gold-grad)" stroke-width="0.8" />
+        <path d="M 6 85 C 28 75, 42 42, 14 14 C 42 42, 75 28, 85 6" fill="none" stroke="url(#gold-grad)" stroke-width="0.6" stroke-dasharray="2 2" />
+        <circle cx="25" cy="25" r="2" fill="url(#gold-grad)" />
+        <circle cx="45" cy="45" r="1" fill="url(#gold-grad)" />
+        <circle cx="10" cy="10" r="1" fill="url(#gold-grad)" />
+      </symbol>
+
+      <!-- Top Center Arch Ornament (Leo Glyph ♌ in center) -->
+      <symbol id="svg-top-arch" viewBox="0 0 400 60">
+        <path d="M 5 45 Q 200 5 395 45" fill="none" stroke="url(#gold-grad)" stroke-width="2.5" />
+        <path d="M 15 48 Q 200 12 385 48" fill="none" stroke="url(#gold-grad)" stroke-width="1.2" stroke-dasharray="4 3" />
+        <path d="M 25 50 Q 200 18 375 50" fill="none" stroke="url(#gold-grad)" stroke-width="0.7" />
+
+        <path d="M 60 38 C 65 30, 75 32, 80 38" fill="none" stroke="url(#gold-grad)" stroke-width="1" />
+        <path d="M 320 38 C 325 30, 335 32, 340 38" fill="none" stroke="url(#gold-grad)" stroke-width="1" />
+        <path d="M 100 30 C 105 24, 112 26, 115 30" fill="none" stroke="url(#gold-grad)" stroke-width="0.8" />
+        <path d="M 285 30 C 290 24, 297 26, 300 30" fill="none" stroke="url(#gold-grad)" stroke-width="0.8" />
+
+        <g transform="translate(200, 28)">
+          <circle cx="0" cy="-6" r="15" fill="#060913" stroke="url(#gold-grad)" stroke-width="2.5" />
+          <circle cx="0" cy="-6" r="12" fill="none" stroke="url(#gold-grad)" stroke-width="0.8" stroke-dasharray="2 2" />
+          <!-- Leo Glyph -->
+          <circle cx="-5" cy="-6" r="3" fill="none" stroke="url(#gold-grad)" stroke-width="2" />
+          <path d="M -2 -6 C -2 -13, 4 -13, 4 -6 C 4 0, 8 0, 10 -4" fill="none" stroke="url(#gold-grad)" stroke-width="2" stroke-linecap="round"/>
+          
+          <path d="M -15 0 C -33 -12, -50 5, -75 -8" fill="none" stroke="url(#gold-grad)" stroke-width="1.5" />
+          <path d="M 15 0 C 33 -12, 50 5, 75 -8" fill="none" stroke="url(#gold-grad)" stroke-width="1.5" />
+          <path d="M -15 5 C -33 18, -50 2, -75 14" fill="none" stroke="url(#gold-grad)" stroke-width="1" />
+          <path d="M 15 5 C 33 18, 50 2, 75 14" fill="none" stroke="url(#gold-grad)" stroke-width="1" />
+          
+          <circle cx="-45" cy="-2" r="2" fill="url(#gold-grad)" />
+          <circle cx="45" cy="-2" r="2" fill="url(#gold-grad)" />
+          <circle cx="-30" cy="8" r="1.5" fill="url(#gold-grad)" />
+          <circle cx="30" cy="8" r="1.5" fill="url(#gold-grad)" />
+        </g>
+
+        <rect x="148" y="35" width="5" height="5" transform="rotate(45 150.5 37.5)" fill="url(#gold-grad)" />
+        <rect x="247" y="35" width="5" height="5" transform="rotate(45 249.5 37.5)" fill="url(#gold-grad)" />
+      </symbol>
+      
+      <!-- Bottom Center Scroll Ornament -->
+      <symbol id="svg-bottom-scroll" viewBox="0 0 300 40">
+        <path d="M 5 12 Q 150 35 295 12" fill="none" stroke="url(#gold-grad)" stroke-width="2" />
+        <path d="M 15 15 Q 150 32 285 15" fill="none" stroke="url(#gold-grad)" stroke-width="0.8" stroke-dasharray="3 2" />
+        <g transform="translate(150, 20)">
+          <path d="M 0 -2 C -20 -14, -40 6, -60 -8" fill="none" stroke="url(#gold-grad)" stroke-width="1.5" />
+          <path d="M 0 -2 C 20 -14, 40 6, 60 -8" fill="none" stroke="url(#gold-grad)" stroke-width="1.5" />
+          <path d="M 0 3 C -18 12, -35 -2, -50 8" fill="none" stroke="url(#gold-grad)" stroke-width="1" />
+          <path d="M 0 3 C 18 12, 35 -2, 50 8" fill="none" stroke="url(#gold-grad)" stroke-width="1" />
+          <rect x="-4" y="-4" width="8" height="8" transform="rotate(45 0 0)" fill="url(#gold-grad)" />
+          <circle cx="-16" cy="-5" r="2.5" fill="url(#gold-grad)" />
+          <circle cx="16" cy="-5" r="2.5" fill="url(#gold-grad)" />
+          <circle cx="-30" cy="0" r="1.5" fill="url(#gold-grad)" />
+          <circle cx="30" cy="0" r="1.5" fill="url(#gold-grad)" />
+        </g>
+      </symbol>
+
+      <!-- CHAPTER ILLUSTRATION 1: Leo Solar Mane -->
+      <symbol id="svg-illustration-leo" viewBox="0 0 120 120">
+        <g stroke="url(#gold-grad)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <circle cx="60" cy="60" r="24" stroke-width="2.5" />
+          <circle cx="60" cy="60" r="4" fill="url(#gold-grad)" stroke="none" />
+          <circle cx="60" cy="60" r="34" stroke-dasharray="3 3" stroke-width="0.8" />
+          <line x1="60" y1="24" x2="60" y2="14" stroke-width="2" />
+          <line x1="60" y1="96" x2="60" y2="106" stroke-width="2" />
+          <line x1="24" y1="60" x2="14" y2="60" stroke-width="2" />
+          <line x1="96" y1="60" x2="106" y2="60" stroke-width="2" />
+          <line x1="34" y1="34" x2="27" y2="27" stroke-width="1.5" />
+          <line x1="86" y1="86" x2="93" y2="93" stroke-width="1.5" />
+          <line x1="86" y1="34" x2="93" y2="27" stroke-width="1.5" />
+          <line x1="34" y1="86" x2="27" y2="93" stroke-width="1.5" />
+        </g>
+      </symbol>
+
+      <!-- CHAPTER ILLUSTRATION 2: The Cosmic Sun -->
+      <symbol id="svg-illustration-sun" viewBox="0 0 120 120">
+        <g stroke="url(#gold-grad)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <circle cx="60" cy="60" r="16" stroke-width="2.5" />
+          <circle cx="60" cy="60" r="3.5" fill="url(#gold-grad)" stroke="none" />
+          <path d="M 60 18 Q 63 30 60 38" />
+          <path d="M 60 102 Q 57 90 60 82" />
+          <path d="M 18 60 Q 30 63 38 60" />
+          <path d="M 102 60 Q 90 57 82 60" />
+          <circle cx="60" cy="60" r="42" stroke-dasharray="4 2" stroke-width="0.8" />
+        </g>
+      </symbol>
+
+      <!-- CHAPTER ILLUSTRATION 3: The Crowned Heart -->
+      <symbol id="svg-illustration-heart" viewBox="0 0 120 120">
+        <g stroke="url(#gold-grad)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <path d="M 60 82 C 60 82, 32 58, 32 40 C 32 26, 44 18, 60 32 C 76 18, 88 26, 88 40 C 88 58, 60 82, 60 82 Z" stroke-width="2.5" />
+          <path d="M 50 26 L 42 14 L 60 20 L 78 14 L 70 26 Z" stroke-width="1.8" fill="none" />
+          <circle cx="60" cy="48" r="2.5" fill="url(#gold-grad)" stroke="none" />
+          <circle cx="20" cy="40" r="1.5" fill="url(#gold-grad)" stroke="none" />
+          <circle cx="100" cy="40" r="1.5" fill="url(#gold-grad)" stroke="none" />
+          <circle cx="60" cy="98" r="2" fill="url(#gold-grad)" stroke="none" />
+        </g>
+      </symbol>
+
+      <!-- SECTION DIVIDER ILLUSTRATION: Horizontal Filigree Leaf/Vines -->
+      <symbol id="svg-divider-gold" viewBox="0 0 200 24">
+        <g fill="none" stroke="url(#gold-grad)">
+          <rect x="96" y="8" width="8" height="8" transform="rotate(45 100 12)" stroke-width="1.5"/>
+          <circle cx="100" cy="12" r="2" fill="url(#gold-grad)" />
+          <path d="M 90 12 C 75 6, 65 18, 50 12 C 35 6, 25 18, 10 12" stroke-width="1.2" />
+          <path d="M 80 12 C 70 18, 60 6, 45 12" stroke-width="0.8" />
+          <path d="M 30 12 C 20 6, 15 12, 5 12" stroke-width="0.6" />
+          <path d="M 110 12 C 125 6, 135 18, 150 12 C 165 6, 175 18, 190 12" stroke-width="1.2" />
+          <path d="M 120 12 C 130 18, 140 6, 155 12" stroke-width="0.8" />
+          <path d="M 170 12 C 180 6, 185 12, 195 12" stroke-width="0.6" />
+          <circle cx="50" cy="12" r="1.5" fill="url(#gold-grad)" />
+          <circle cx="150" cy="12" r="1.5" fill="url(#gold-grad)" />
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Main App Shell -->
+  <div class="app-container">
+    
+    <!-- Collapsible Sidebar Menu -->
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar-header">
+        <a href="../HoroscopBioritam/index.html" class="logo-link" id="logo-link">
+          <div class="royal-emblem">
+            <svg viewBox="0 0 100 100" width="48" height="48" class="gold-svg animate-rotate">
+              <circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="2.5"/>
+              <circle cx="50" cy="50" r="37" fill="none" stroke="currentColor" stroke-dasharray="3 3" stroke-width="0.8"/>
+              <!-- Leo Glyph center -->
+              <circle cx="38" cy="55" r="8" fill="none" stroke="currentColor" stroke-width="3.5" />
+              <path d="M 45 55 C 45 32, 66 32, 66 55 C 66 73, 78 73, 84 60" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="50" cy="18" r="2" fill="currentColor"/>
+              <circle cx="20" cy="50" r="1.5" fill="currentColor"/>
+              <circle cx="80" cy="50" r="1.5" fill="currentColor"/>
+              <circle cx="50" cy="82" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="title-group">
+            <h1>LAV</h1>
+            <p class="subtitle">Peti Znak Zodijaka</p>
+          </div>
+        </a>
+        <button class="mobile-close-btn" id="sidebar-close-btn" aria-label="Zatvori meni">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg>
+        </button>
+      </div>
+
+      <!-- Live Search Box -->
+      <div class="search-box">
+        <div class="search-input-wrapper">
+          <svg viewBox="0 0 24 24" width="18" height="18" class="search-icon"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="currentColor"/></svg>
+          <input type="text" id="search-input" placeholder="Pretraži knjigu..." autocomplete="off">
+          <button id="search-clear-btn" class="hidden" aria-label="Očisti pretragu">
+            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg>
+          </button>
+        </div>
+        <div id="search-results-summary" class="search-results-summary hidden">Pronađeno 0 rezultata</div>
+      </div>
+
+      <!-- Navigation Tabs (Sadržaj vs Aktivnosti) -->
+      <nav class="nav-tabs">
+        <button class="tab-btn active" id="tab-toc">Sadržaj</button>
+        <button class="tab-btn" id="tab-widgets">Radionica</button>
+      </nav>
+
+      <!-- TOC Menu list -->
+      <div class="sidebar-scroll-area">
+        <ul class="toc-list" id="toc-list-container">
+          <!-- Dynamically populated from bookData.js -->
+        </ul>
+
+        <!-- Interactive widgets list (Radionica) -->
+        <ul class="widgets-list hidden" id="widgets-list-container">
+          <li class="widget-menu-item" data-widget="scale">
+            <span class="icon">👑</span>
+            <div class="widget-desc">
+              <span class="title">Alhemija Srca</span>
+              <span class="detail">Balans Helios i Apolon solarnih sila</span>
+            </div>
+          </li>
+          <li class="widget-menu-item" data-widget="calculator">
+            <span class="icon">📅</span>
+            <div class="widget-desc">
+              <span class="title">Kalkulator Dekanata</span>
+              <span class="detail">Saznajte vaš sub-dekanat i solarnu lekciju</span>
+            </div>
+          </li>
+          <li class="widget-menu-item" data-widget="quiz">
+            <span class="icon">✨</span>
+            <div class="widget-desc">
+              <span class="title">Test Transmutacije</span>
+              <span class="detail">Proverite integraciju ega i suverenosti</span>
+            </div>
+          </li>
+          <li class="widget-menu-item" data-widget="journal">
+            <span class="icon">✍️</span>
+            <div class="widget-desc">
+              <span class="title">Radna Sveska</span>
+              <span class="detail">Dnevnik nemejske kože i kraljevskih granica</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Sidebar Footer Settings -->
+      <div class="sidebar-footer">
+        <button class="footer-action-btn" id="btn-settings-drawer" title="Podešavanja prikaza">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z" fill="currentColor"/></svg>
+          <span>Podešavanja</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="main-workspace">
+      
+      <!-- Top Action Bar -->
+      <header class="top-bar">
+        <div class="top-bar-left">
+          <button class="hamburger-btn" id="sidebar-toggle-btn" aria-label="Otvori meni">
+            <svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="currentColor"/></svg>
+          </button>
+          <div class="current-chapter-indicator">
+            <span id="current-chapter-name">Učitavanje...</span>
+          </div>
+        </div>
+        
+        <div class="top-bar-right">
+          <!-- Back to AstroBioRhythm Portal -->
+          <a href="../HoroscopBioritam/index.html" class="portal-back-btn" title="Nazad na AstroBioRhythm">
+            <svg viewBox="0 0 24 24" width="18" height="18" class="gold-svg"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/></svg>
+            <span class="mobile-hidden">Nazad na portal</span>
+          </a>
+
+          <!-- Audio Drone Synthesizer -->
+          <div class="audio-control">
+            <button class="sound-btn" id="btn-ambient-sound" title="Pusti ambijentalne frekvencije Sunca (126.22 Hz)">
+              <svg viewBox="0 0 24 24" width="20" height="20" class="audio-icon-off"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM12 4L9.91 6.09 12 8.18V4zm-8 8c0 .55.45 1 1 1h3l3.29 3.29c.63.63 1.71.18 1.71-.71V4.41c0-.89-1.08-1.34-1.71-.71L8 7H5c-.55 0-1 .45-1 1v4zm16.5 0c0 3.07-1.76 5.64-4.5 6.97v2.04c3.83-1.4 6.5-5.05 6.5-9.01s-2.67-7.61-6.5-9.01v2.04c2.74 1.33 4.5 3.9 4.5 6.97z" fill="currentColor"/></svg>
+              <svg viewBox="0 0 24 24" width="20" height="20" class="audio-icon-on hidden"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" fill="currentColor"/></svg>
+              <span class="mobile-hidden">126 Hz</span>
+            </button>
+          </div>
+
+          <!-- Bookmarking button -->
+          <button class="bookmark-btn" id="btn-toggle-bookmark" title="Obeleži ovu stranicu">
+            <svg viewBox="0 0 24 24" width="22" height="22" class="bookmark-icon-empty"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 24 24" width="22" height="22" class="bookmark-icon-filled hidden"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z" fill="currentColor"/></svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Search results display overlay -->
+      <div id="search-results-overlay" class="search-overlay hidden">
+        <div class="search-overlay-header">
+          <h2>Rezultati pretrage za: "<span id="search-query-display"></span>"</h2>
+          <button id="btn-close-search" class="close-overlay-btn">Zatvori rezultate</button>
+        </div>
+        <div class="search-overlay-scrollable">
+          <div class="search-results-list" id="search-results-list-container">
+            <!-- Populated by search matches -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Reading / Widget Viewport -->
+      <div class="viewport-content" id="viewport-content-container">
+        
+        <!-- Book Cover Page -->
+        <article class="book-cover-page" id="book-cover-page">
+          <div class="royal-frame">
+            <div class="frame-edge top">
+              <svg class="top-arch"><use href="#svg-top-arch"/></svg>
+            </div>
+            <div class="frame-corner top-left">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner top-right">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner bottom-left">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner bottom-right">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-edge bottom">
+              <svg class="bottom-scroll"><use href="#svg-bottom-scroll"/></svg>
+            </div>
+          </div>
+
+          <div class="cover-gold-border">
+            <div class="cover-ornament-top">❦ ♌ ❦</div>
+            <div class="cover-main-content">
+              <h2 class="cover-author">Sveobuhvatna astrološka monografija</h2>
+              <h1 class="cover-title">LAV</h1>
+              <h2 class="cover-subtitle">Ontologija Suverenosti i Alhemija Srca</h2>
+              <div class="cover-art-wrapper">
+                <img src="./assets/Leo_cover-C7MzC_TD.png" alt="Ontologija Suverenosti i Alhemija Srca" class="cover-art-img">
+              </div>
+              <p class="cover-meta">Sveobuhvatna astrološka monografija o petom znaku zodijaka. Detaljan vodič kroz arhetip suverenosti, mitologiju, Sunce, somatsku biologiju srca, kičme i pogleda, i duhovnu alhemiju Lava.</p>
+              <button class="gold-btn btn-read-start" id="btn-start-reading">Započni Čitanje</button>
+            </div>
+            <div class="cover-ornament-bottom">❦ IN PRINCIPIO ERAT VERBUM ❦</div>
+            
+            <!-- Book Credit Footer -->
+            <div class="book-credit-footer" id="book-credit-footer">
+              <p>@ LeduBaSK &nbsp;&nbsp;&nbsp;&nbsp; 2026</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Chapter Reader Layout -->
+        <article class="chapter-reader hidden" id="chapter-reader">
+          <div class="royal-frame">
+            <div class="frame-edge top">
+              <svg class="top-arch"><use href="#svg-top-arch"/></svg>
+            </div>
+            <div class="frame-corner top-left">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner top-right">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner bottom-left">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner bottom-right">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-edge bottom">
+              <svg class="bottom-scroll"><use href="#svg-bottom-scroll"/></svg>
+            </div>
+          </div>
+
+          <div class="reader-content-wrapper" id="chapter-reader-content">
+            <!-- Contents dynamically loaded here -->
+          </div>
+        </article>
+
+        <!-- Interactive Widget: Alhemija Srca (Helios/Apolon) -->
+        <section class="widget-container hidden" id="widget-scale-section">
+          <div class="royal-frame">
+            <div class="frame-edge top">
+              <svg class="top-arch"><use href="#svg-top-arch"/></svg>
+            </div>
+            <div class="frame-corner top-left">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner top-right">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner bottom-left">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner bottom-right">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-edge bottom">
+              <svg class="bottom-scroll"><use href="#svg-bottom-scroll"/></svg>
+            </div>
+          </div>
+          <div class="widget-content-wrapper" id="widget-scale-content">
+            <!-- Widget Alhemija Srca UI -->
+          </div>
+        </section>
+
+        <!-- Interactive Widget: Astro Calculator (Decani Lava) -->
+        <section class="widget-container hidden" id="widget-calculator-section">
+          <div class="royal-frame">
+            <div class="frame-edge top">
+              <svg class="top-arch"><use href="#svg-top-arch"/></svg>
+            </div>
+            <div class="frame-corner top-left">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner top-right">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner bottom-left">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner bottom-right">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-edge bottom">
+              <svg class="bottom-scroll"><use href="#svg-bottom-scroll"/></svg>
+            </div>
+          </div>
+          <div class="widget-content-wrapper" id="widget-calculator-content">
+            <!-- Widget Calculator UI -->
+          </div>
+        </section>
+
+        <!-- Interactive Widget: Quiz (Test Transmutacije) -->
+        <section class="widget-container hidden" id="widget-quiz-section">
+          <div class="royal-frame">
+            <div class="frame-edge top">
+              <svg class="top-arch"><use href="#svg-top-arch"/></svg>
+            </div>
+            <div class="frame-corner top-left">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner top-right">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner bottom-left">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner bottom-right">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-edge bottom">
+              <svg class="bottom-scroll"><use href="#svg-bottom-scroll"/></svg>
+            </div>
+          </div>
+          <div class="widget-content-wrapper" id="widget-quiz-content">
+            <!-- Widget Quiz UI -->
+          </div>
+        </section>
+
+        <!-- Interactive Widget: Journal (Radna Sveska) -->
+        <section class="widget-container hidden" id="widget-journal-section">
+          <div class="royal-frame">
+            <div class="frame-edge top">
+              <svg class="top-arch"><use href="#svg-top-arch"/></svg>
+            </div>
+            <div class="frame-corner top-left">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner top-right">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner bottom-left">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-corner bottom-right">
+              <svg class="corner"><use href="#svg-corner"/></svg>
+            </div>
+            <div class="frame-edge bottom">
+              <svg class="bottom-scroll"><use href="#svg-bottom-scroll"/></svg>
+            </div>
+          </div>
+          <div class="widget-content-wrapper" id="widget-journal-content">
+            <!-- Widget Journal UI -->
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Bottom Nav / Page Controls -->
+      <footer class="bottom-page-controls">
+        <button class="nav-arrow-btn" id="btn-prev-page" disabled>
+          <svg viewBox="0 0 24 24" width="24" height="24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="currentColor"/></svg>
+          <span class="control-label">Prethodno</span>
+        </button>
+        
+        <div class="reading-progress-container">
+          <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="reading-progress-indicator" style="width: 0%;"></div>
+          </div>
+          <span class="progress-percentage" id="reading-progress-text">0% pročitano</span>
+        </div>
+
+        <button class="nav-arrow-btn" id="btn-next-page">
+          <span class="control-label">Sledeće</span>
+          <svg viewBox="0 0 24 24" width="24" height="24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="currentColor"/></svg>
+        </button>
+      </footer>
+    </main>
+    
+  </div>
+
+  <!-- Settings Drawer Overlay -->
+  <div class="settings-drawer-overlay hidden" id="settings-drawer">
+    <div class="settings-drawer-content">
+      <div class="drawer-header">
+        <h3>Podešavanja knjige</h3>
+        <button class="close-drawer-btn" id="btn-close-settings">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/></svg>
+        </button>
+      </div>
+
+      <div class="drawer-body">
+        <!-- Theme Selector -->
+        <div class="settings-group">
+          <h4>Kraljevska Tema prikaza</h4>
+          <div class="theme-selector-grid">
+            <button class="theme-option active" data-theme="platinum" title="Analitička platina (Srebrno-siva)">
+              <span class="color-dot" style="background: #111522;"></span>
+              <span class="theme-name">Analitička platina</span>
+            </button>
+            <button class="theme-option" data-theme="sun" title="Solarno zlato (Kraljevsko zlato i obsidian)">
+              <span class="color-dot" style="background: #090703; border: 1px solid #bf953f;"></span>
+              <span class="theme-name">Solarno zlato</span>
+            </button>
+            <button class="theme-option" data-theme="heart" title="Alhemija srca (Rubin crveno i bakar)">
+              <span class="color-dot" style="background: #120507; border: 1px solid #e07b53;"></span>
+              <span class="theme-name">Alhemija srca</span>
+            </button>
+            <button class="theme-option" data-theme="crown" title="Kraljevski purpur (Ametist i zlato)">
+              <span class="color-dot" style="background: #0c0614; border: 1px solid #a855f7;"></span>
+              <span class="theme-name">Kraljevski purpur</span>
+            </button>
+            <button class="theme-option" data-theme="parchment" title="Stari rukopis (Svetli pergament)">
+              <span class="color-dot" style="background: #f5eedc; border: 1px solid #aa771c;"></span>
+              <span class="theme-name">Stari rukopis</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Typography Settings -->
+        <div class="settings-group">
+          <h4>Veličina teksta</h4>
+          <div class="font-size-adjuster">
+            <button class="size-btn" id="btn-size-decrease" title="Smanji slova">A-</button>
+            <span class="size-display" id="font-size-display">100%</span>
+            <button class="size-btn" id="btn-size-increase" title="Povećaj slova">A+</button>
+          </div>
+        </div>
+
+        <!-- Layout mode settings -->
+        <div class="settings-group">
+          <h4>Način čitanja</h4>
+          <div class="layout-toggle-group">
+            <button class="layout-toggle-btn active" id="btn-layout-book" title="Knjiga (Stranicu po stranicu)">
+              <span>Stranice</span>
+            </button>
+            <button class="layout-toggle-btn" id="btn-layout-scroll" title="Kontinuirani skrol">
+              <span>Beskonačni skrol</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Bookmarks manager -->
+        <div class="settings-group">
+          <h4>Vaši obeleživači</h4>
+          <div class="bookmarks-list-wrapper" id="bookmarks-list-container">
+            <p class="empty-bookmarks">Nemate sačuvanih obeleživača.</p>
+          </div>
+        </div>
+
+        <!-- Clear app data -->
+        <div class="settings-group danger-zone">
+          <button class="danger-btn-outline" id="btn-reset-app-data">Resetuj sve podatke</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Context initialization dialog -->
+  <div class="audio-start-banner hidden" id="audio-banner">
+    <div class="banner-content">
+      <span class="music-icon">🎵</span>
+      <p>Želite li da aktivirate suptilne zvučne talase od 126.22 Hz (frekvencija oktave Sunca) za stabilnost srca, fokus i unutrašnju suverenost tokom čitanja?</p>
+      <div class="banner-buttons">
+        <button class="gold-btn btn-small" id="btn-audio-accept">Aktiviraj</button>
+        <button class="text-btn btn-small" id="btn-audio-decline">Zanemari</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core Scripts -->
+</body>
+</html>
